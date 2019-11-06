@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Magireco MES（α）</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+
+	<!--Let browser know website is optimized for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+	<div id="modeChangeForm" class="modal">
+		<div class="modal-content">
+			<h4>Magireco MES（α）</h4>
+			<p>Magireco MES (Magireco Mental Enhance Simulator)は、<br />
+			マギアレコードのキャラ固有能力育成機能「精神強化」のシミュレータです。<br />
+			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
+			<div class="divider"></div>
+			<h5>【クイックスタート】</h5>
+			<p>「CharacterSelect」より対象キャラを選択すると、<br />
+			そのキャラの精神強化ボードが生成されます。<br />
+			(※灰色のキャラは未実装です。)</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<div id="modalHowTo" class="modal">
+		<div class="modal-content">
+			<h4>Magireco MES（α）</h4>
+			<p>Magireco MES (Magireco Mental Enhance Simulator)は、<br />
+			マギアレコードのキャラ固有能力育成機能「精神強化」のシミュレータです。<br />
+			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
+			<div class="divider"></div>
+			<h5>【使い方】</h5>
+			<p>「CharacterSelect」より対象キャラを選択すると、<br />
+			そのキャラの精神強化ボードが生成されます。<br />
+			(※灰色のキャラは未実装です。)</p>
+			<p>能力解放はSTARTのマスから次のマスをクリックしていくだけです。</p>
+			<p>強化後のステータス、及び、現在の能力解放数はボード左上に表示されます。<br />
+				習得済みのディスク強化・潜在アビリティ・潜在スキルは<br />
+				ボード右上の「Ability / Skill」をクリックすると一覧が表示されます。
+			</p>
+			<p>入力状況のセーブ・ロード機能はありません（今後実装予定）。<br />
+				別のキャラを選択した場合、現在入力しているキャラの状態はリセットされます。<br />
+				また、同じキャラを再度選択した場合もリセットとなります。
+			</p>
+			<div class="divider"></div>
+			<h5>【動作推奨環境】</h5>
+			<p>PC上のChromeでの利用を推奨します。他のブラウザでは確認していません。<br />
+				マップ右端の列が見えるようウィンドウサイズを調整、またはズーム倍率を縮小してご利用ください。</p>
+			<p>スマホ・タブレットは非推奨です。<br />
+				iPadのSafariで確認しましたが、一部機能しないボタンがあります。<br />
+				スマホではページの横幅が非常に広い影響でほとんど表示しきれません。
+			</p>
+			<div class="divider"></div>
+			<h5>【能力解放数(Release)の上限について】</h5>
+			<p>本家同様、デフォルトでは60までを上限としています。<br />
+				上限数に達している場合は、未取得のマスをクリックしても解放されません。
+			</p>
+			<p>「cap 60」のチェックを外すと100まで上限開放されます。</p>
+			<div class="divider"></div>
+			<h5>【能力解放について】</h5>
+			<p>各マスをクリックすると、そのマスの能力を獲得できます。</p>
+			<p>ただし、本家同様、解放は「次のマス」しか解放できません。<br />
+				先のマスをクリックしても一括解放はできません（今後実装予定）。
+			</p>
+			<p>また、解放済みマスの解除(払い戻し)はできません（今後実装予定）。<br />
+				再度「CharacterSelect」から同じキャラを選択し、最初からやり直してください。</p>
+			<div class="divider"></div>
+			<h5>【素材・消費CCについて】</h5>
+			<p>素材・消費CCの情報表示は未実装です（今後実装予定）。</p>
+			<div class="divider"></div>
+			<h5>【キャラの基本ステータスについて】</h5>
+			<p>そのキャラの最大覚醒＆最大LV時のステータスを基本にしています。<br />
+				メモリア・覚醒素材のセットボーナスは含んでいません。</p>
+			<div class="divider"></div>
+			<h5>【NodeSearch(マス検索機能)について】</h5>
+			<p>本家には無い実験的な機能です。<br />
+				キャラ選択後に「CharacterSelect」の右側に出現します。
+			</p>
+			<p>本家では獲得したい能力のマスを全体から一つ一つ目で探すのが大変なので、<br />
+				マス探索の補助を目的として実装しています。<br />
+				（後々、素材名を基に検索する機能も検討中。）
+			</p>
+			<p>「NodeSearch」より検索対象を選択すると、対象のマスが波紋表示されます。</p>
+			<p>検索対象は以下の通り。</p>
+			<table id="NodeSearchInfo" class="striped">
+				<tr>
+					<td>None</td>
+					<td>全マスの波紋表示を停止します。</td>
+				</tr>
+				<tr>
+					<td>HP</td>
+					<td>「HP最大能力値アップ」を持つマスを全て波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>HP MAX Node</td>
+					<td>「HP最大能力値アップ」を持つマスの内、最も高い上昇値を持つマスを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>HP MAX Route</td>
+					<td>各終点までのルートの内、「HP最大能力値アップ」の上昇値合計が最も高くなるルートを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>ATK</td>
+					<td>「ATK最大能力値アップ」を持つマスを全て波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>ATK MAX Node</td>
+					<td>「ATK最大能力値アップ」を持つマスの内、最も高い上昇値を持つマスを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>ATK MAX Route</td>
+					<td>各終点までのルートの内、「ATK最大能力値アップ」の上昇値合計が最も高くなるルートを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>DEF</td>
+					<td>「DEF最大能力値アップ」を持つマスを全て波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>DEF MAX Node</td>
+					<td>「DEF最大能力値アップ」を持つマスの内、最も高い上昇値を持つマスを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>DEF MAX Route</td>
+					<td>各終点までのルートの内、「DEF最大能力値アップ」の上昇値合計が最も高くなるルートを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>Ability</td>
+					<td>「潜在アビリティ」を持つマスを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>Skill</td>
+					<td>「潜在スキル」を持つマスを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>Disc Enhance</td>
+					<td>「Accele性能アップ」「Charge性能アップ」「Blast性能アップ」を持つマスを波紋表示します。</td>
+				</tr>
+				<tr>
+					<td>Last Node</td>
+					<td>各ルートにおける終点のマスを波紋表示します。</td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<div id="modalAbout" class="modal">
+		<div class="modal-content">
+			<h5>Version</h5>
+			<p>v0.01 alpha</p>
+			<div class="divider"></div>
+			<h5>Author</h5>
+			<p>BBQ (Twitter: @BBQ17882590 )</p>
+			<div class="divider"></div>
+			<h5>History</h5>
+			<h6>v0.01</h6>
+			<p>　・α版公開</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="javascript:void(0)"><s class="grey-text">環いろは</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">七海やちよ</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">由比鶴乃</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">美樹さやか</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" id="tomoemami">巴マミ<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">広江ちはる</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">煌里ひかる</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">七瀬ゆきか</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">暁美ほむら(眼鏡Ver.)</s></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)"><s class="grey-text">呉キリカ</s></a></li>
+	</ul>
+	<ul id="dropdown2" class="dropdown-content">
+		<li><a href="javascript:void(0)" class="grey-text" id="soNone">None<i class="material-icons red-text">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="pink-text" id="soHp">HP<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="pink-text" id="soHpMaxNode">HP MAX Node<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="pink-text" id="soHpMaxRoute">HP MAX Route<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="red-text" id="soAtk">ATK<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="red-text" id="soAtkMaxNode">ATK MAX Node<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="red-text" id="soAtkMaxRoute">ATK MAX Route<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="blue-text" id="soDef">DEF<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="blue-text" id="soDefMaxNode">DEF MAX Node<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="blue-text" id="soDefMaxRoute">DEF MAX Route<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="indigo-text" id="soAbility">Ability<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="purple-text" id="soSkill">Skill<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="lime-text" id="soDisc">Disc Enhance<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="black-text" id="soLastNode">Last Node<i class="material-icons red-text" style="display:none;">check</i></a></li>
+	</ul>
+	
+	<div class="navbar-fixed">
+		<nav class="pink lighten-3" role="navigation">
+			<div class="nav-wrapper">
+				<a href="javascript:void(0)" class="brand-logo">Magireco MES（α）</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="#modalHowTo" data-target="modalHowTo" class="modal-trigger">HowTo</a></li>
+					<li style="width:200px;"><a class="dropdown-trigger" href="javascript:void(0)" data-target="dropdown1"><span id="charcterSelectTitle">CharacterSelect</span><i class="material-icons right">arrow_drop_down</i></a></li>
+					<li style="width:200px;display:none;" id="searchNodeTitle"><a class="dropdown-trigger" href="javascript:void(0)" data-target="dropdown2">NodeSearch<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a href="#modalAbout" data-target="modalAbout" class="modal-trigger">About</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="card small chara-status z-depth-3" style="display:none;">
+		<div class="card-content black-text">
+			<table>
+				<tbody>
+					<tr>
+						<th>Name</th>
+						<td><span id="charaName"></span></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>HP</th>
+						<td><span id="charaHpTotal">0</span></td>
+						<td><span id="charaHpPlus">(+0)</span></td>
+					</tr>
+					<tr>
+						<th>ATK</th>
+						<td><span id="charaAtkTotal">0</span></td>
+						<td><span id="charaAtkPlus">(+0)</span></td>
+					</tr>
+					<tr>
+						<th>DEF</th>
+						<td><span id="charaDefTotal">0</span></td>
+						<td><span id="charaDefPlus">(+0)</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="releaseTable">
+				<tbody>
+					<tr>
+						<th>Release</td>
+						<td id="charaReleaseTd" class="tooltipped" data-position="bottom" data-tooltip=""><span id="charaReleasePoint">0</span><span> / </span><span id="charaReleaseCap">60</span></td>
+						<td><label><input type="checkbox" class="filled-in" checked="checked" id="capCheck" /><span>cap 60</span></label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div id="skill-area" style="display:none;">
+		<ul id="dropdown3" class="dropdown-content">
+		</ul>
+		<a class="btn dropdown-trigger z-depth-3" href="#!" data-target="dropdown3">Ability / Skill<i class="material-icons right">arrow_drop_down</i></a>
+	</div>
+	            
+	<div class="map-area">
+		<table class="map-table" style="display:none;">
+			<tr>
+				<td>
+					<div>
+						<div><a id="Node100" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">100</a></div>
+						<div><a id="Node99" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">99</a></div>
+						<div><a id="Node98" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">98</a></div>
+						<div><a id="Node97" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">97</a></div>
+						<div><a id="Node96" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">96</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node86" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">86</a></div>
+						<div><a id="Node85" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">85</a></div>
+						<div><a id="Node84" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">84</a></div>
+						<div><a id="Node83" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">83</a></div>
+						<div><a id="Node82" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">82</a></div>
+						<div><a id="Node81" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">81</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node87" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">87</a></div>
+						<div><a id="Node57" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">57</a></div>
+						<div><a id="Node56" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">56</a></div>
+						<div><a id="Node55" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">55</a></div>
+						<div><a id="Node54" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">54</a></div>
+						<div><a id="Node53" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">53</a></div>
+						<div><a id="Node80" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">80</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node88" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">88</a></div>
+						<div><a id="Node58" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">58</a></div>
+						<div><a id="Node34" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">34</a></div>
+						<div><a id="Node33" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">33</a></div>
+						<div><a id="Node32" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">32</a></div>
+						<div><a id="Node31" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">31</a></div>
+						<div><a id="Node52" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">52</a></div>
+						<div><a id="Node79" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">79</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node89" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">89</a></div>
+						<div><a id="Node59" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">59</a></div>
+						<div><a id="Node35" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">35</a></div>
+						<div><a id="Node17" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">17</a></div>
+						<div><a id="Node16" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">16</a></div>
+						<div><a id="Node15" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">15</a></div>
+						<div><a id="Node30" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">30</a></div>
+						<div><a id="Node51" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">51</a></div>
+						<div><a id="Node78" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">78</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node90" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">90</a></div>
+						<div><a id="Node60" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">60</a></div>
+						<div><a id="Node36" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">36</a></div>
+						<div><a id="Node18" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">18</a></div>
+						<div><a id="Node6" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">6</a></div>
+						<div><a id="Node5" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">5</a></div>
+						<div><a id="Node14" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">14</a></div>
+						<div><a id="Node29" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">29</a></div>
+						<div><a id="Node50" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">50</a></div>
+						<div><a id="Node77" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">77</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node61" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">61</a></div>
+						<div><a id="Node37" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">37</a></div>
+						<div><a id="Node19" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">19</a></div>
+						<div><a id="Node7" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">7</a></div>
+						<div><a id="Node1" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="ATKアップ<br>+120">1</a></div>
+						<div><a id="Node0" class="btn-floating btn-large waves-effect waves-light grey node-margin-top">0</a></div>
+						<div><a id="Node4" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">4</a></div>
+						<div><a id="Node13" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">13</a></div>
+						<div><a id="Node28" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">28</a></div>
+						<div><a id="Node49" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">49</a></div>
+						<div><a id="Node76" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">76</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node62" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">62</a></div>
+						<div><a id="Node38" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">38</a></div>
+						<div><a id="Node20" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">20</a></div>
+						<div><a id="Node8" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">8</a></div>
+						<div><a id="Node2" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">2</a></div>
+						<div><a id="Node3" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">3</a></div>
+						<div><a id="Node12" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">12</a></div>
+						<div><a id="Node27" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">27</a></div>
+						<div><a id="Node48" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">48</a></div>
+						<div><a id="Node75" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">75</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node63" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">63</a></div>
+						<div><a id="Node39" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">39</a></div>
+						<div><a id="Node21" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">21</a></div>
+						<div><a id="Node9" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">9</a></div>
+						<div><a id="Node10" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">10</a></div>
+						<div><a id="Node11" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">11</a></div>
+						<div><a id="Node26" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">26</a></div>
+						<div><a id="Node47" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">47</a></div>
+						<div><a id="Node74" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">74</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node64" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">64</a></div>
+						<div><a id="Node40" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">40</a></div>
+						<div><a id="Node22" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">22</a></div>
+						<div><a id="Node23" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">23</a></div>
+						<div><a id="Node24" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">24</a></div>
+						<div><a id="Node25" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">25</a></div>
+						<div><a id="Node46" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">46</a></div>
+						<div><a id="Node73" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">73</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node65" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">65</a></div>
+						<div><a id="Node41" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">41</a></div>
+						<div><a id="Node42" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">42</a></div>
+						<div><a id="Node43" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">43</a></div>
+						<div><a id="Node44" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">44</a></div>
+						<div><a id="Node45" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">45</a></div>
+						<div><a id="Node72" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">72</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node66" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">66</a></div>
+						<div><a id="Node67" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">67</a></div>
+						<div><a id="Node68" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">68</a></div>
+						<div><a id="Node69" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">69</a></div>
+						<div><a id="Node70" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">70</a></div>
+						<div><a id="Node71" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">71</a></div>
+					</div>
+				</td>
+				<td>
+					<div>
+						<div><a id="Node91" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">91</a></div>
+						<div><a id="Node92" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">92</a></div>
+						<div><a id="Node93" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">93</a></div>
+						<div><a id="Node94" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">94</a></div>
+						<div><a id="Node95" class="btn-floating btn-large waves-effect waves-light grey node-margin-top tooltipped" data-position="top" data-tooltip="">95</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<footer class="page-footer pink lighten-3">
+		<div class="footer-copyright">
+			<div class="container center">
+			© 2019 Magireco MES (Magireco Mental Enhance Simulator)
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="js/app.min.js"></script>
+</body>
+</html>
