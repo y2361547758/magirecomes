@@ -13,12 +13,20 @@
 </head>
 
 <body>
-	<div id="modeChangeForm" class="modal">
+	<div id="modalQuickStart" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h4>Magireco MES（α）</h4>
 			<p>Magireco MES (Magireco Mental Enhance Simulator)は、<br />
 			マギアレコードのキャラ固有能力育成機能「精神強化」のシミュレータです。<br />
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
+			<div class="divider"></div>
+			<h5>【アップデート情報】</h5>
+			<p>2019/11/16　v0.04にアップデートしました。詳細はAboutのHistory参照。</p>
+			<ul class="historyUl">
+				<li>リセットボタンを追加</li>
+				<li>２種類のツリー表示モード、及び、表示切替ボタンを追加</li>
+				<li>「習得アビリティ/スキル」ボタン上にカーソルを合わせた時に、マスのポップを全て表示するように</li>
+			</ul>
 			<div class="divider"></div>
 			<h5>【クイックスタート】</h5>
 			<p>「CharacterSelect」より対象キャラを選択すると、<br />
@@ -73,7 +81,7 @@
 		</div>
 	</div>
 
-	<div id="modalHowTo" class="modal">
+	<div id="modalHowTo" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h4>Magireco MES（α）</h4>
 			<p>Magireco MES (Magireco Mental Enhance Simulator)は、<br />
@@ -114,7 +122,13 @@
 			<p>各マスをクリックすると、そのマスまでの能力を全て獲得できます。<br />
 			本家と異なり、先のマスまで一括で解放できます。</p>
 			<p>また、解放済みマスの解除(払い戻し)はできません（今後実装予定）。<br />
-				再度「CharacterSelect」から同じキャラを選択し、最初からやり直してください。</p>
+				リセットボタンを押して最初からやり直してください。</p>
+			<div class="divider"></div>
+			<h5>【表示形式の切替について】</h5>
+			<p>右上のオレンジのボタンを押す度に表示形式を切り替えることができます。<br />
+			「ツリーモードⅠ」は深さ毎のマスを、「ツリーモードⅡ」は分岐毎のルートを明確にします。
+			</p>
+			<p>何れのモードでも解放操作ができ、解放状況はそれぞれのモードに引き継がれます。</p>
 			<div class="divider"></div>
 			<h5>【素材・消費CCについて】</h5>
 			<p>素材・消費CCの情報表示は未実装です（今後実装予定）。</p>
@@ -197,16 +211,40 @@
 		</div>
 	</div>
 
-	<div id="modalAbout" class="modal">
+	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.03 alpha</p>
+			<p>v0.04 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
 			<div class="divider"></div>
 			<h5>History</h5>
-			<h6><b>v0.03</b></h6>
+			<h6><b>v0.04 (2019/11/16)</b></h6>
+			<ul class="historyUl">
+				<li>リセットボタンを追加</li>
+				<li>２種類のツリー表示モード、及び、表示切替ボタンを追加
+					<ul>
+						<li>ツリーモードⅠでは深さ毎のマスを集合して表示するように</li>
+						<li>ツリーモードⅡでは分岐毎のルートを明確に表示するように</li>
+					</ul>
+				</li>
+				<li>「習得アビリティ/スキル」ボタン上にカーソルを合わせた時に、マスのポップを全て表示するように</li>
+				<li>バグフィックス
+					<ul>
+						<li>水波レナの上昇値が１マス誤っていたのを修正 (×ATK87 ⇒ ○ATK84)</li>
+						<li>上昇値を表示した時にステータス欄がガタつくのを修正</li>
+						<li>キャラを切り替えた時に上昇値合計が赤字のままになっていたのを修正</li>
+					</ul>
+				</li>
+				<li>その他の調整
+					<ul>
+						<li>マス検索機能の波紋効果を最大２分で自動停止するように</li>
+						<li>ソース全体をリファクタリングし、処理を高速化</li>
+					</ul>
+				</li>
+			</ul>
+			<h6><b>v0.03 (2019/11/11)</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
 					<ul>
@@ -226,7 +264,7 @@
 					</ul>
 				</li>
 			</ul>
-			<h6><b>v0.02</b></h6>
+			<h6><b>v0.02 (2019/11/10)</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
 					<ul>
@@ -260,7 +298,7 @@
 					</ul>
 				</li>
 			</ul>
-			<h6><b>v0.01</b></h6>
+			<h6><b>v0.01 (2019/11/07)</b></h6>
 			<ul class="historyUl">
 				<li>α版公開</li>
 				<li>選択可能キャラを追加
@@ -273,6 +311,16 @@
 		</div>
 		<div class="modal-footer">
 			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<div id="modalAllReset" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<p>全ての解放状態をリセットします。よろしいですか？</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-red btn-flat">CANCEL</a>
+			<a id="btnAllResetOk" href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
 		</div>
 	</div>
 
@@ -345,7 +393,7 @@
 		<li><a href="javascript:void(0)" class="black-text" id="soLastNode">Last Node<i class="material-icons red-text" style="display:none;">check</i></a></li>
 	</ul>
 	
-	<div class="navbar-fixed">
+	<div id="header" class="navbar-fixed">
 		<nav class="pink lighten-3" role="navigation">
 			<div class="nav-wrapper">
 				<a href="javascript:void(0)" class="brand-logo">Magireco MES（α）</a>
@@ -360,7 +408,7 @@
 	</div>
 
 	<a id="btnStatusShow" class="btn-floating amber darken-1" style="display:none;"><i class="material-icons">arrow_drop_down</i></a>
-	<div class="card small chara-status z-depth-3" style="display:none;">
+	<div id="statusCard" class="card small chara-status z-depth-3" style="display:none;">
 		<div class="card-content black-text">
 			<table class="statusTable">
 				<tbody>
@@ -403,161 +451,163 @@
 	<ul id="slideAS" class="sidenav">
 	</ul>
 	<a id="btnASShow" data-target="slideAS" class="btn-floating teal lighten-1 sidenav-trigger tooltipped" data-position="left" data-tooltip="習得アビリティ / スキル" style="display:none;"><i class="material-icons">library_books</i></a>
+	<a id="btnTreeMode" class="btn-floating yellow darken-2 tooltipped" data-position="left" data-tooltip="ツリーモード" style="display:none;"><i class="material-icons">crop_rotate</i></a>
+	<a id="btnAllReset" class="btn-floating btn-small orange darken-2 tooltipped modal-trigger" href="#modalAllReset" data-position="left" data-tooltip="リセット" style="display:none;"><i class="material-icons">clear_all</i></a>
 
 	<div class="map-area">
-		<table class="map-table" style="display:none;">
+		<table id="mapTable" class="map-table" style="display:none;">
 			<tr>
 				<td>
-					<div>
-						<div><a id="Node100" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">100</a></div>
-						<div><a id="Node99" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">99</a></div>
-						<div><a id="Node98" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">98</a></div>
-						<div><a id="Node97" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">97</a></div>
-						<div><a id="Node96" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">96</a></div>
+					<div id="mapCol1">
+						<div><a id="Node100" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">100</a></div>
+						<div><a id="Node99" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">99</a></div>
+						<div><a id="Node98" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">98</a></div>
+						<div><a id="Node97" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">97</a></div>
+						<div><a id="Node96" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">96</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node86" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">86</a></div>
-						<div><a id="Node85" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">85</a></div>
-						<div><a id="Node84" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">84</a></div>
-						<div><a id="Node83" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">83</a></div>
-						<div><a id="Node82" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">82</a></div>
-						<div><a id="Node81" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">81</a></div>
+					<div id="mapCol2">
+						<div><a id="Node86" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">86</a></div>
+						<div><a id="Node85" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">85</a></div>
+						<div><a id="Node84" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">84</a></div>
+						<div><a id="Node83" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">83</a></div>
+						<div><a id="Node82" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">82</a></div>
+						<div><a id="Node81" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">81</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node87" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">87</a></div>
-						<div><a id="Node57" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">57</a></div>
-						<div><a id="Node56" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">56</a></div>
-						<div><a id="Node55" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">55</a></div>
-						<div><a id="Node54" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">54</a></div>
-						<div><a id="Node53" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">53</a></div>
-						<div><a id="Node80" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">80</a></div>
+					<div id="mapCol3">
+						<div><a id="Node87" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">87</a></div>
+						<div><a id="Node57" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">57</a></div>
+						<div><a id="Node56" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">56</a></div>
+						<div><a id="Node55" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">55</a></div>
+						<div><a id="Node54" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">54</a></div>
+						<div><a id="Node53" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">53</a></div>
+						<div><a id="Node80" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">80</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node88" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">88</a></div>
-						<div><a id="Node58" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">58</a></div>
-						<div><a id="Node34" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">34</a></div>
-						<div><a id="Node33" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">33</a></div>
-						<div><a id="Node32" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">32</a></div>
-						<div><a id="Node31" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">31</a></div>
-						<div><a id="Node52" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">52</a></div>
-						<div><a id="Node79" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">79</a></div>
+					<div id="mapCol4">
+						<div><a id="Node88" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">88</a></div>
+						<div><a id="Node58" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">58</a></div>
+						<div><a id="Node34" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">34</a></div>
+						<div><a id="Node33" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">33</a></div>
+						<div><a id="Node32" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">32</a></div>
+						<div><a id="Node31" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">31</a></div>
+						<div><a id="Node52" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">52</a></div>
+						<div><a id="Node79" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">79</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node89" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">89</a></div>
-						<div><a id="Node59" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">59</a></div>
-						<div><a id="Node35" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">35</a></div>
-						<div><a id="Node17" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">17</a></div>
-						<div><a id="Node16" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">16</a></div>
-						<div><a id="Node15" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">15</a></div>
-						<div><a id="Node30" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">30</a></div>
-						<div><a id="Node51" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">51</a></div>
-						<div><a id="Node78" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">78</a></div>
+					<div id="mapCol5">
+						<div><a id="Node89" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">89</a></div>
+						<div><a id="Node59" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">59</a></div>
+						<div><a id="Node35" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">35</a></div>
+						<div><a id="Node17" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">17</a></div>
+						<div><a id="Node16" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">16</a></div>
+						<div><a id="Node15" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">15</a></div>
+						<div><a id="Node30" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">30</a></div>
+						<div><a id="Node51" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">51</a></div>
+						<div><a id="Node78" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">78</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node90" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">90</a></div>
-						<div><a id="Node60" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">60</a></div>
-						<div><a id="Node36" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">36</a></div>
-						<div><a id="Node18" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">18</a></div>
-						<div><a id="Node6" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">6</a></div>
-						<div><a id="Node5" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">5</a></div>
-						<div><a id="Node14" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">14</a></div>
-						<div><a id="Node29" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">29</a></div>
-						<div><a id="Node50" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">50</a></div>
-						<div><a id="Node77" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">77</a></div>
+					<div id="mapCol6">
+						<div><a id="Node90" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">90</a></div>
+						<div><a id="Node60" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">60</a></div>
+						<div><a id="Node36" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">36</a></div>
+						<div><a id="Node18" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">18</a></div>
+						<div><a id="Node6" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">6</a></div>
+						<div><a id="Node5" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">5</a></div>
+						<div><a id="Node14" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">14</a></div>
+						<div><a id="Node29" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">29</a></div>
+						<div><a id="Node50" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">50</a></div>
+						<div><a id="Node77" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">77</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node61" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">61</a></div>
-						<div><a id="Node37" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">37</a></div>
-						<div><a id="Node19" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">19</a></div>
-						<div><a id="Node7" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">7</a></div>
-						<div><a id="Node1" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">1</a></div>
+					<div id="mapCol7">
+						<div><a id="Node61" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">61</a></div>
+						<div><a id="Node37" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">37</a></div>
+						<div><a id="Node19" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">19</a></div>
+						<div><a id="Node7" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">7</a></div>
+						<div><a id="Node1" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">1</a></div>
 						<div><a id="Node0" class="btn-floating waves-effect waves-light grey node-margin-top">0</a></div>
-						<div><a id="Node4" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">4</a></div>
-						<div><a id="Node13" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">13</a></div>
-						<div><a id="Node28" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">28</a></div>
-						<div><a id="Node49" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">49</a></div>
-						<div><a id="Node76" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">76</a></div>
+						<div><a id="Node4" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">4</a></div>
+						<div><a id="Node13" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">13</a></div>
+						<div><a id="Node28" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">28</a></div>
+						<div><a id="Node49" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">49</a></div>
+						<div><a id="Node76" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">76</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node62" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">62</a></div>
-						<div><a id="Node38" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">38</a></div>
-						<div><a id="Node20" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">20</a></div>
-						<div><a id="Node8" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">8</a></div>
-						<div><a id="Node2" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">2</a></div>
-						<div><a id="Node3" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">3</a></div>
-						<div><a id="Node12" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">12</a></div>
-						<div><a id="Node27" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">27</a></div>
-						<div><a id="Node48" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">48</a></div>
-						<div><a id="Node75" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">75</a></div>
+					<div id="mapCol8">
+						<div><a id="Node62" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">62</a></div>
+						<div><a id="Node38" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">38</a></div>
+						<div><a id="Node20" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">20</a></div>
+						<div><a id="Node8" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">8</a></div>
+						<div><a id="Node2" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">2</a></div>
+						<div><a id="Node3" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">3</a></div>
+						<div><a id="Node12" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">12</a></div>
+						<div><a id="Node27" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">27</a></div>
+						<div><a id="Node48" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">48</a></div>
+						<div><a id="Node75" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">75</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node63" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">63</a></div>
-						<div><a id="Node39" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">39</a></div>
-						<div><a id="Node21" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">21</a></div>
-						<div><a id="Node9" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">9</a></div>
-						<div><a id="Node10" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">10</a></div>
-						<div><a id="Node11" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">11</a></div>
-						<div><a id="Node26" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">26</a></div>
-						<div><a id="Node47" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">47</a></div>
-						<div><a id="Node74" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">74</a></div>
+					<div id="mapCol9">
+						<div><a id="Node63" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">63</a></div>
+						<div><a id="Node39" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">39</a></div>
+						<div><a id="Node21" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">21</a></div>
+						<div><a id="Node9" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">9</a></div>
+						<div><a id="Node10" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">10</a></div>
+						<div><a id="Node11" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">11</a></div>
+						<div><a id="Node26" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">26</a></div>
+						<div><a id="Node47" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">47</a></div>
+						<div><a id="Node74" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">74</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node64" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">64</a></div>
-						<div><a id="Node40" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">40</a></div>
-						<div><a id="Node22" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">22</a></div>
-						<div><a id="Node23" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">23</a></div>
-						<div><a id="Node24" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">24</a></div>
-						<div><a id="Node25" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">25</a></div>
-						<div><a id="Node46" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">46</a></div>
-						<div><a id="Node73" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">73</a></div>
+					<div id="mapCol10">
+						<div><a id="Node64" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">64</a></div>
+						<div><a id="Node40" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">40</a></div>
+						<div><a id="Node22" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">22</a></div>
+						<div><a id="Node23" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">23</a></div>
+						<div><a id="Node24" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">24</a></div>
+						<div><a id="Node25" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">25</a></div>
+						<div><a id="Node46" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">46</a></div>
+						<div><a id="Node73" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">73</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node65" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">65</a></div>
-						<div><a id="Node41" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">41</a></div>
-						<div><a id="Node42" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">42</a></div>
-						<div><a id="Node43" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">43</a></div>
-						<div><a id="Node44" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">44</a></div>
-						<div><a id="Node45" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">45</a></div>
-						<div><a id="Node72" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">72</a></div>
+					<div id="mapCol11">
+						<div><a id="Node65" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">65</a></div>
+						<div><a id="Node41" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">41</a></div>
+						<div><a id="Node42" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">42</a></div>
+						<div><a id="Node43" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">43</a></div>
+						<div><a id="Node44" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">44</a></div>
+						<div><a id="Node45" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">45</a></div>
+						<div><a id="Node72" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">72</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node66" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">66</a></div>
-						<div><a id="Node67" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">67</a></div>
-						<div><a id="Node68" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">68</a></div>
-						<div><a id="Node69" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">69</a></div>
-						<div><a id="Node70" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">70</a></div>
-						<div><a id="Node71" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">71</a></div>
+					<div id="mapCol12">
+						<div><a id="Node66" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">66</a></div>
+						<div><a id="Node67" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">67</a></div>
+						<div><a id="Node68" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">68</a></div>
+						<div><a id="Node69" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">69</a></div>
+						<div><a id="Node70" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">70</a></div>
+						<div><a id="Node71" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">71</a></div>
 					</div>
 				</td>
 				<td>
-					<div>
-						<div><a id="Node91" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">91</a></div>
-						<div><a id="Node92" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">92</a></div>
-						<div><a id="Node93" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">93</a></div>
-						<div><a id="Node94" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">94</a></div>
-						<div><a id="Node95" class="btn-floating waves-effect waves-light grey" data-position="top" data-tooltip="">95</a></div>
+					<div id="mapCol13">
+						<div><a id="Node91" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">91</a></div>
+						<div><a id="Node92" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">92</a></div>
+						<div><a id="Node93" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">93</a></div>
+						<div><a id="Node94" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">94</a></div>
+						<div><a id="Node95" class="btn-floating waves-effect waves-light" data-position="top" data-tooltip="">95</a></div>
 					</div>
 				</td>
 			</tr>
@@ -570,6 +620,7 @@
 			</div>
 		</div>
 	</footer>
+
 	<script type="text/javascript" src="js/app.min.js"></script>
 </body>
 </html>
