@@ -21,11 +21,11 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
-			<p>2019/11/16　v0.04にアップデートしました。詳細はAboutのHistory参照。</p>
+			<p>2019/11/22　v0.05にアップデートしました。詳細はAboutのHistoryを参照。</p>
 			<ul class="historyUl">
-				<li>リセットボタンを追加</li>
-				<li>２種類のツリー表示モード、及び、表示切替ボタンを追加</li>
-				<li>「習得アビリティ/スキル」ボタン上にカーソルを合わせた時に、マスのポップを全て表示するように</li>
+				<li>解放キャンセル機能を実装</li>
+				<li>マスのロック機能を実装</li>
+				<li>ステータス欄をドラッグ操作で移動可能に</li>
 			</ul>
 			<div class="divider"></div>
 			<h5>【クイックスタート】</h5>
@@ -121,14 +121,23 @@
 			<h5>【能力解放について】</h5>
 			<p>各マスをクリックすると、そのマスまでの能力を全て獲得できます。<br />
 			本家と異なり、先のマスまで一括で解放できます。</p>
-			<p>また、解放済みマスの解除(払い戻し)はできません（今後実装予定）。<br />
-				リセットボタンを押して最初からやり直してください。</p>
+			<p>また、もう一つ本家と異なる機能として解放キャンセルがあります。<br />
+			解放済みのマスをクリックすると、それ以降のマスを未解放に戻すことがでます。</p>
 			<div class="divider"></div>
 			<h5>【表示形式の切替について】</h5>
 			<p>右上のオレンジのボタンを押す度に表示形式を切り替えることができます。<br />
 			「ツリーモードⅠ」は深さ毎のマスを、「ツリーモードⅡ」は分岐毎のルートを明確にします。
 			</p>
 			<p>何れのモードでも解放操作ができ、解放状況はそれぞれのモードに引き継がれます。</p>
+			<div class="divider"></div>
+			<h5>【ロック機能について】</h5>
+			<p>本家には無い実験的な機能です。<br />
+			右上の鍵マークのボタンを押すとロックモードに切り替えることができます。<br />
+			このモードではマスをクリックすることでロック、及びロック解除を行うことができます。
+			</p>
+			<p>ロックは「解放済みのマス」であるか、「未解放のマス」であるかによって意味が異なります。</p>
+			<p>「解放済みのマス」の場合：　それまでのマスを解放キャンセル不可にします。</p>
+			<p>「未解放のマス」の場合：　それ以降のマスを解放不可にします。</p>
 			<div class="divider"></div>
 			<h5>【素材・消費CCについて】</h5>
 			<p>素材・消費CCの情報表示は未実装です（今後実装予定）。</p>
@@ -214,12 +223,50 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.04 alpha</p>
+			<p>v0.05 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
 			<div class="divider"></div>
 			<h5>History</h5>
+			<h6><b>v0.05 (2019/11/22)</b></h6>
+			<ul class="historyUl">
+				<li>解放キャンセル機能を実装
+					<ul>
+						<li>解放済みのマスをクリックすると、そのマスまでを未解放状態に戻す</li>
+						<li>未解放状態にしたマス分、ステータス・能力解放数を減少させ、<br />
+						ディスク強化・アビリティ・スキルを一覧から削除する(払い戻し)</li>
+						<li>マスの上にカーソルを合わせると、キャンセル後の予定値を表示するように</li>
+					</ul>
+				</li>
+				<li>マスのロック機能を実装
+					<ul>
+						<li>画面右上にロックモード切替ボタンを追加</li>
+						<li>解放済みのマスをロックすると、それまでのマスを解放キャンセル不可に</li>
+						<li>未解放のマスをロックすると、それ以降のマスを解放不可に</li>
+						<li>リセットボタン押下時に、ロック状態を保持するかのオプションを追加</li>
+					</ul>
+				</li>
+				<li>ステータス欄をドラッグ操作で移動可能に
+					<ul>
+						<li>この実装に伴い、ステータス欄の折り畳み機能を廃止</li>
+						<li>左上のボタンは、押すとステータス欄を初期位置に戻す機能に変更</li>
+					</ul>
+				</li>
+				<li>バグフィックス
+					<ul>
+						<li>十咎ももこの潜在スキルの効果内容を修正（「ダメージカット無視」⇒「必ずダメージカット無視(自/1T)」）</li>
+						<li>ステータス表示、リセット、ツリーモード切替、習得アビリティ/スキルのボタン上のアイコンが選択できてしまう不具合を修正</li>
+						<li>未実装のキャラを選択した時にエラーが発生していた不具合を修正</li>
+					</ul>
+				</li>
+				<li>その他の調整
+					<ul>
+						<li>ステータス欄の文字色の仕様を変更（黒字：現在の値、青字：上昇予定値、赤字：減少予定値）</li>
+						<li>ポップ表示のサイズを縮小</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>v0.04 (2019/11/16)</b></h6>
 			<ul class="historyUl">
 				<li>リセットボタンを追加</li>
@@ -317,6 +364,8 @@
 	<div id="modalAllReset" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<p>全ての解放状態をリセットします。よろしいですか？</p>
+			
+			<label><input type="checkbox" class="filled-in" checked="checked" id="checkResetOpt" /><span>ロック状態のマスはリセットしない</span></label>
 		</div>
 		<div class="modal-footer">
 			<a href="#!" class="modal-close waves-effect waves-red btn-flat">CANCEL</a>
@@ -352,6 +401,8 @@
 		<li><a href="javascript:void(0)" class="orange-text">環いろは<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">粟根こころ<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="orange-text">和泉十七夜<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)"><s class="grey-text">七瀬ゆきか</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -399,16 +450,16 @@
 				<a href="javascript:void(0)" class="brand-logo">Magireco MES（α）</a>
 				<ul id="nav-mobile" class="right">
 					<li><a href="#modalHowTo" data-target="modalHowTo" class="modal-trigger">HowTo</a></li>
-					<li style="width:200px;"><a class="dropdown-trigger" href="javascript:void(0)" data-target="dropdownChara"><span id="charcterSelectTitle">CharacterSelect</span><i class="material-icons right">arrow_drop_down</i></a></li>
-					<li style="width:200px;display:none;" id="searchNodeTitle"><a class="dropdown-trigger" href="javascript:void(0)" data-target="dropdownSearch">NodeSearch<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li style="width:200px;"><a id="btnCharacterSelect" class="dropdown-trigger" href="javascript:void(0)" data-target="dropdownChara"><span id="charcterSelectTitle">CharacterSelect</span><i class="material-icons right">arrow_drop_down</i></a></li>
+					<li style="width:200px;display:none;" id="searchNodeTitle"><a  id="btnNodeSearch" class="dropdown-trigger" href="javascript:void(0)" data-target="dropdownSearch">NodeSearch<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a href="#modalAbout" data-target="modalAbout" class="modal-trigger">About</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
 
-	<a id="btnStatusShow" class="btn-floating amber darken-1" style="display:none;"><i class="material-icons">arrow_drop_down</i></a>
-	<div id="statusCard" class="card small chara-status z-depth-3" style="display:none;">
+	<a id="btnStatusShow" class="btn-floating waves-effect waves-light btn-small amber darken-1" style="display:none;"><i class="material-icons">arrow_drop_down</i></a>
+	<div id="statusCard" class="card small chara-status z-depth-3 draggItem" style="display:none;">
 		<div class="card-content black-text">
 			<table class="statusTable">
 				<tbody>
@@ -420,19 +471,19 @@
 						<th>HP</th>
 						<td><span id="charaHpTotal">0</span></td>
 						<td><span id="charaHpPlusTd">(+<span id="charaHpPlus">0</span>)</span></td>
-						<td><span id="charaHpNextTd" class="indigo-text" style="display:none;">(+<span id="charaHpNext">0</span>)</span></td>
+						<td><span id="charaHpNextTd" style="display:none;">(<span id="charaHpNext">0</span>)</span></td>
 					</tr>
 					<tr>
 						<th>ATK</th>
 						<td><span id="charaAtkTotal">0</span></td>
 						<td><span id="charaAtkPlusTd">(+<span id="charaAtkPlus">0</span>)</span></td>
-						<td><span id="charaAtkNextTd" class="indigo-text" style="display:none;">(+<span id="charaAtkNext">0</span>)</span></td>
+						<td><span id="charaAtkNextTd" style="display:none;">(<span id="charaAtkNext">0</span>)</span></td>
 					</tr>
 					<tr>
 						<th>DEF</th>
 						<td><span id="charaDefTotal">0</span></td>
 						<td><span id="charaDefPlusTd">(+<span id="charaDefPlus">0</span>)</span></td>
-						<td><span id="charaDefNextTd" class="indigo-text" style="display:none;">(+<span id="charaDefNext">0</span>)</span></td>
+						<td><span id="charaDefNextTd" style="display:none;">(<span id="charaDefNext">0</span>)</span></td>
 					</tr>
 				</tbody>
 			</table>
@@ -450,9 +501,10 @@
 	
 	<ul id="slideAS" class="sidenav">
 	</ul>
-	<a id="btnASShow" data-target="slideAS" class="btn-floating teal lighten-1 sidenav-trigger tooltipped" data-position="left" data-tooltip="習得アビリティ / スキル" style="display:none;"><i class="material-icons">library_books</i></a>
-	<a id="btnTreeMode" class="btn-floating yellow darken-2 tooltipped" data-position="left" data-tooltip="ツリーモード" style="display:none;"><i class="material-icons">crop_rotate</i></a>
-	<a id="btnAllReset" class="btn-floating btn-small orange darken-2 tooltipped modal-trigger" href="#modalAllReset" data-position="left" data-tooltip="リセット" style="display:none;"><i class="material-icons">clear_all</i></a>
+	<a id="btnASShow" data-target="slideAS" class="btn-floating waves-effect waves-light teal lighten-1 sidenav-trigger tooltipped" data-position="left" data-tooltip="習得アビリティ / スキル" style="display:none;"><i class="material-icons">library_books</i></a>
+	<a id="btnTreeMode" class="btn-floating waves-effect waves-light yellow darken-2 tooltipped" data-position="left" data-tooltip="ツリーモード" style="display:none;"><i class="material-icons">crop_rotate</i></a>
+	<a id="btnLockMode" class="btn-floating waves-effect waves-light grey darken-2 tooltipped" data-position="left" data-tooltip="ロックモード" style="display:none;"><i class="material-icons">lock</i></a>
+	<a id="btnAllReset" class="btn-floating waves-effect waves-light btn-small orange darken-2 tooltipped modal-trigger" href="#modalAllReset" data-position="left" data-tooltip="リセット" style="display:none;"><i class="material-icons">clear_all</i></a>
 
 	<div class="map-area">
 		<table id="mapTable" class="map-table" style="display:none;">
