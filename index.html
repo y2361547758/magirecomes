@@ -22,6 +22,25 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
+			<p>2020/01/07　v0.11にアップデートしました。</p>
+			<ul class="historyUl">
+				<li>選択可能キャラを追加
+					<ul>
+						<li>古町みくら　※<br>
+						※　"有栖ありさ"さんより情報提供頂きました。この場を借りて感謝致します。</li>
+					</ul>
+				</li>
+				<li>その他調整
+					<ul>
+						<li>「習得アビリティ/スキル」ボタン上にカーソルを乗せた時の一括表示を改善
+							<ul>
+								<li>ディスク強化は表示内容を短くし、Accele(青)・Charge(黄)・Blast(赤)に合わせた背景色で表示するように</li>
+								<li>潜在スキルは背景色を紫で表示するように</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
 			<p>2020/01/01　v0.10にアップデートしました。</p>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
@@ -150,7 +169,7 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
 		</div>
 	</div>
 
@@ -213,7 +232,11 @@
 			<p>「未解放のマス」の場合：　それ以降のマスを解放不可にします。</p>
 			<div class="divider"></div>
 			<h5>【素材・消費CCについて】</h5>
-			<p>素材・消費CCの情報表示は未実装です（今後実装予定）。</p>
+			<p>マス上にカーソルを乗せると、ステータスカード下の「素材･CCカード」に情報が表示されます。<br>
+			「素材･CCカード」は画面左上にある表示切替ボタンにより表示⇔非表示の切替が可能です。<br>
+			また、カードはマウスドラッグで移動できます。</p>
+			<p>表示切替ボタン右にある「素材CC追従モード」ボタンを押すと、「素材･CCカード」がマウスカーソル左側に
+			一定の距離を空けて追従するようになります。もう一度押すと解除されます。</p>
 			<div class="divider"></div>
 			<h5>【キャラの基本ステータスについて】</h5>
 			<p>そのキャラの最大覚醒＆最大LV時のステータスを基本にしています。<br />
@@ -289,7 +312,7 @@
 			</table>
 		</div>
 		<div class="modal-footer">
-			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
 		</div>
 	</div>
 
@@ -308,6 +331,24 @@
 			</ul>
 			<div class="divider"></div>
 			<h5>History</h5>
+			<h6><b>v0.11 (2020/01/07)</b></h6>
+			<ul class="historyUl">
+				<li>選択可能キャラを追加
+					<ul>
+						<li>古町みくら</li>
+					</ul>
+				</li>
+				<li>その他調整
+					<ul>
+						<li>「習得アビリティ/スキル」ボタン上にカーソルを乗せた時の一括表示を改善
+							<ul>
+								<li>ディスク強化は表示内容を短くし、Accele(青)・Charge(黄)・Blast(赤)に合わせた背景色で表示するように</li>
+								<li>潜在スキルは背景色を紫で表示するように</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>v0.10 (2020/01/01)</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
@@ -537,7 +578,7 @@
 			</ul>
 		</div>
 		<div class="modal-footer">
-			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
 		</div>
 	</div>
 
@@ -548,8 +589,8 @@
 			<label><input type="checkbox" class="filled-in" checked="checked" id="checkResetOpt" /><span>ロック状態のマスはリセットしない</span></label>
 		</div>
 		<div class="modal-footer">
-			<a href="#!" class="modal-close waves-effect waves-red btn-flat">CANCEL</a>
-			<a id="btnAllResetOk" href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-red btn-flat">CANCEL</a>
+			<a id="btnAllResetOk" href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">OK</a>
 		</div>
 	</div>
 
@@ -620,7 +661,7 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="purple-text">梨花・れん クリスマスver.<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)" class="purple-text"><s class="grey-text">古町みくら</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li><a href="javascript:void(0)" class="purple-text">古町みくら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="brown-text">八雲みたま<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
