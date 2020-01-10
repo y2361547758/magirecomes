@@ -13,12 +13,19 @@
 	  gtag('config', 'UA-155766341-1');
 	</script>
 
+	<meta name="twitter:card" content="summary" />
+	<meta property="og:title" content="Magireco MES" />
+	<meta property="og:description" content="マギアレコードの精神強化のシミュレータです。" />
+	<meta property="og:image" content="https://sasugamamisan.github.io/magirecomes/img/icon-144x144.png" />
+
 	<title>Magireco MES（α）</title>
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
 
+	<link rel="shortcut icon" href="https://sasugamamisan.github.io/magirecomes/img/icon/favicon.ico" >
+	
 	<!--Let browser know website is optimized for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -32,7 +39,52 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
-			<p>2020/01/07　v0.11にアップデートしました。</p>
+			<h6><b>2020/01/10　v0.12にアップデートしました。</b></h6>
+			<ul class="historyUl">
+				<li>選択可能キャラを追加
+					<ul>
+						<li>佐倉杏子</li>
+						<li>二葉さな</li>
+						<li>鹿目まどか</li>
+						<li>天音月咲</li>
+						<li>深月フェリシア</li>
+						<li>天音月夜</li>
+						<li>暁美ほむら</li>
+					</ul>
+				</li>
+				<li>クイックセーブ・クイックロード機能を実装
+					<ul>
+						<li>画面右下に「クイックセーブ」ボタン、「クイックロード」ボタンを追加</li>
+						<li>クイックセーブは押す度に、スロット１を最新としてキャラ毎に３つまで保存可能</li>
+						<li>クイックロードは、スロット１～３のボタンを押すことでセーブ時のボード入力状況を復元</li>
+					</ul>
+				</li>
+				<li>セーブ&ロード画面を追加（※機能は開発中）
+					<ul>
+						<li>画面右下に「セーブ&ロード画面を開く」ボタンを追加</li>
+						<li>「全セーブデータ削除」ボタンを設置</li>
+					</ul>
+				</li>
+				<li>URL出力機能を実装
+					<ul>
+						<li>画面右下に「URL出力」ボタンを追加</li>
+						<li>ボタンを押すと、現在のボード入力状況をURL化し、画面上に表示します。<br>
+						（人に譲渡可能な他、Twitterのツイートに貼り付けて公開可能。）</li>
+						<li>「クリップボードにコピー」ボタンを設置</li>
+						<li>Twitterのシェアボタンを設置</li>
+					</ul>
+				</li>
+				<li>その他調整
+					<ul>
+						<li>Aboutの「Special Thanks」「History」を展開リスト形式に変更
+							<ul>
+								<li>「Special Thanks」は具体的な提供情報の内容を表示するように</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h6><b>2020/01/07　v0.11にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
 					<ul>
@@ -42,7 +94,7 @@
 				</li>
 				<li>その他調整
 					<ul>
-						<li>「習得アビリティ/スキル」ボタン上にカーソルを乗せた時の一括表示を改善
+						<li>潜在スキル・ディスク強化のポップ表示の背景色を変更
 							<ul>
 								<li>ディスク強化は表示内容を短くし、Accele(青)・Charge(黄)・Blast(赤)に合わせた背景色で表示するように</li>
 								<li>潜在スキルは背景色を紫で表示するように</li>
@@ -51,7 +103,7 @@
 					</ul>
 				</li>
 			</ul>
-			<p>2020/01/01　v0.10にアップデートしました。</p>
+			<h6><b>2020/01/01　v0.10にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
 					<ul>
@@ -82,31 +134,6 @@
 					<ul>
 						<li>ステータスカードの表示切替ボタンを追加<br>
 						(タブレットなどはカードのドラッグ移動ができず、カードが邪魔になってマスが隠れてしまう場合に非表示にできるように)</li>
-					</ul>
-				</li>
-			</ul>
-			<p>2019/12/26　v0.09にアップデートしました。</p>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>ホーリーアリナ</li>
-					</ul>
-				</li>
-			</ul>
-			<p>2019/12/23　v0.08 fix1にアップデートしました。</p>
-			<ul class="historyUl">
-				<li>バグフィックス
-					<ul>
-						<li>綾野梨花のマスの位置が誤っていたのを修正</li>
-					</ul>
-				</li>
-			</ul>
-			<p>2019/12/17　v0.08にアップデートしました。</p>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>宮尾時雨</li>
-						<li>梨花・れん クリスマスver.</li>
 					</ul>
 				</li>
 			</ul>
@@ -144,6 +171,7 @@
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>由比鶴乃</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>十咎ももこ</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>綾野梨花</a></div>
+				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>佐倉杏子</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>御園かりん</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>三穂野せいら</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>七海やちよ</a></div>
@@ -155,15 +183,18 @@
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>巴マミ</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>秋野かえで</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>千歳ゆま</a></div>
+				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>二葉さな</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>アリナ・グレイ</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>ホーリーアリナ</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>広江ちはる</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>日向茉莉</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>宮尾時雨</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>環いろは</a></div>
+				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>鹿目まどか</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>美国織莉子</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>保澄雫</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>粟根こころ</a></div>
+				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>天音月咲</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>和泉十七夜</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>鹿目まどか 晴着ver.</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>七瀬ゆきか</a></div>
@@ -173,7 +204,11 @@
 				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>呉キリカ</a></div>
 				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>毬子あやか</a></div>
 				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>五十鈴れん</a></div>
+				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>深月フェリシア</a></div>
+				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>天音月夜</a></div>
+				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>暁美ほむら</a></div>
 				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>古町みくら</a></div>
+				<div><a class="waves-effect waves-light btn purple"><i class="material-icons left">person_outline</i>梨花・れん クリスマスver.</a></div>
 				<div><a class="waves-effect waves-light btn brown"><i class="material-icons left">person_outline</i>八雲みたま</a></div>
 				<div><a class="waves-effect waves-light btn brown"><i class="material-icons left">person_outline</i>八雲みたま 晴着ver.</a></div>
 			</div>
@@ -200,9 +235,9 @@
 				習得済みのディスク強化・潜在アビリティ・潜在スキルは<br />
 				ボード右上のボタンをクリックすると習得アビリティ/スキルの一覧が表示されます。
 			</p>
-			<p>入力状況のセーブ・ロード機能はありません（今後実装予定）。<br />
-				別のキャラを選択した場合、現在入力しているキャラの状態はリセットされます。<br />
-				また、同じキャラを再度選択した場合もリセットとなります。
+			<p>別のキャラを選択した場合、現在入力しているキャラの状態はリセットされます。
+				また、同じキャラを再度選択した場合もリセットとなります。<br />
+				適時セーブをしてからキャラ選択をしてください。（現在はクイックセーブのみ可能。）
 			</p>
 			<div class="divider"></div>
 			<h5>【動作推奨環境】</h5>
@@ -320,6 +355,25 @@
 					<td>各ルートにおける終点のマスを波紋表示します。</td>
 				</tr>
 			</table>
+			<div class="divider"></div>
+			<h5>【クイックセーブ＆ロードについて】</h5>
+			<p>画面右下のクイックセーブボタンを押すことで、現在の入力状況をセーブすることができます。<br>
+			セーブしたデータは、画面右下のクイックロードボタンのスロットに保存されます。</p>
+			<p>スロットはキャラ毎に３つあり、クイックセーブをする度にスロット１に最新、スロット２に一つ前、スロット３に二つ前の
+			データが保存され、最も古いデータ（３にセットされていたデータ）は消去されます。</p>
+			<p>クイックロードボタンにカーソルを乗せると、各スロットのボタンが表示され、押すことでセーブデータをロードできます。
+			（現在入力中のボードは破棄されますので、適時セーブしてからロードしてください。）</p>
+			<div class="divider"></div>
+			<h5>【セーブデータについて】</h5>
+			<p>セーブデータはお使いの端末内のローカルディスク上に保存されます。（サーバに送信されることはありません。）
+			同ブラウザ上では共有されますが、異なるブラウザ間での受け渡しはできません。
+			</p>
+			<p>セーブ&ロード画面にて、セーブデータの全消去が可能です。</p>
+			<div class="divider"></div>
+			<h5>【URL出力について】</h5>
+			<p>画面右下のURL出力ボタンを押すと、現在の入力状況をURL化することができます。<br>
+			表示されたURLをブラウザのアドレスバーに入力・移動することで、URL化した時の入力状況を復元できます。</p>
+			<p>自分のボード情報を人に渡したり、Twitterのツイートに貼り付けて公開することができます。</p>
 		</div>
 		<div class="modal-footer">
 			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -329,262 +383,380 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.11 alpha</p>
+			<p>v0.12 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
 			<div class="divider"></div>
 			<h5>Special Thanks</h5>
 			<p>【情報提供者様】</p>
-			<ul class="historyUl">
-				<li>有栖ありさ 様 (Twitter: @magireco_alisa )</li>
+			<ul class="collapsible">
+				<li>
+					<div class="collapsible-header">有栖ありさ 様 (Twitter: @magireco_alisa )</div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>以下のキャラ情報
+								<ul>
+									<li>広江ちはる</li>
+									<li>日向茉莉</li>
+									<li>七瀬ゆきか</li>
+									<li>煌里ひかる</li>
+									<li>古町みくら</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 			<div class="divider"></div>
 			<h5>History</h5>
-			<h6><b>v0.11 (2020/01/07)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>古町みくら</li>
-					</ul>
+			<ul class="collapsible expandable">
+				<li class="active">
+					<div class="collapsible-header"><b>v0.12 (2020/01/10)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>佐倉杏子</li>
+									<li>二葉さな</li>
+									<li>鹿目まどか</li>
+									<li>天音月咲</li>
+									<li>深月フェリシア</li>
+									<li>天音月夜</li>
+									<li>暁美ほむら</li>
+								</ul>
+							</li>
+							<li>クイックセーブ・クイックロード機能を実装
+								<ul>
+									<li>画面右下に「クイックセーブ」ボタン、「クイックロード」ボタンを追加</li>
+									<li>クイックセーブは押す度に、スロット１を最新としてキャラ毎に３つまで保存可能</li>
+									<li>クイックロードは、スロット１～３のボタンを押すことでセーブ時のボード入力状況を復元</li>
+								</ul>
+							</li>
+							<li>セーブ&ロード画面を追加（※機能は開発中）
+								<ul>
+									<li>画面右下に「セーブ&ロード画面を開く」ボタンを追加</li>
+									<li>「全セーブデータ削除」ボタンを設置</li>
+								</ul>
+							</li>
+							<li>URL出力機能を実装
+								<ul>
+									<li>画面右下に「URL出力」ボタンを追加</li>
+									<li>ボタンを押すと、現在のボード入力状況をURL化し、画面上に表示します。<br>
+									（人に譲渡可能な他、Twitterのツイートに貼り付けて公開可能。）</li>
+									<li>「クリップボードにコピー」ボタンを設置</li>
+									<li>Twitterのシェアボタンを設置</li>
+								</ul>
+							</li>
+							<li>その他調整
+								<ul>
+									<li>Aboutの「Special Thanks」「History」を展開リスト形式に変更
+										<ul>
+											<li>「Special Thanks」は具体的な提供情報の内容を表示するように</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>その他調整
-					<ul>
-						<li>「習得アビリティ/スキル」ボタン上にカーソルを乗せた時の一括表示を改善
-							<ul>
-								<li>ディスク強化は表示内容を短くし、Accele(青)・Charge(黄)・Blast(赤)に合わせた背景色で表示するように</li>
-								<li>潜在スキルは背景色を紫で表示するように</li>
-							</ul>
-						</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.11 (2020/01/07)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>古町みくら</li>
+								</ul>
+							</li>
+							<li>その他調整
+								<ul>
+									<li>潜在スキル・ディスク強化のポップ表示の背景色を変更
+										<ul>
+											<li>ディスク強化は表示内容を短くし、Accele(青)・Charge(黄)・Blast(赤)に合わせた背景色で表示するように</li>
+											<li>潜在スキルは背景色を紫で表示するように</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.10 (2020/01/01)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>美樹さやか 晴着ver.</li>
-						<li>鹿目まどか 晴着ver.</li>
-						<li>八雲みたま 晴着ver.</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.10 (2020/01/01)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>美樹さやか 晴着ver.</li>
+									<li>鹿目まどか 晴着ver.</li>
+									<li>八雲みたま 晴着ver.</li>
+								</ul>
+							</li>
+							<li>マスの要求素材･CC表示を実装
+								<ul>
+									<li>カーソルを合わせたマスの素材･CCを表示するように</li>
+									<li>要求素材･CCカードの表示切替ボタンを追加</li>
+								</ul>
+							</li>
+							<li>素材･CCカードのマウス追従機能を実装
+								<ul>
+									<li>素材･CCカードの追従切替ボタンを追加</li>
+									<li>追従機能がONの場合、マウスカーソル左側に一定の距離を空けてカードが追従するように</li>
+								</ul>
+							</li>
+							<li>表示オプション機能を追加
+								<ul>
+									<li>画面左上に表示オプションの表示切替ボタンを追加</li>
+									<li>Lv・欠片の種類のチェックボックスをそれぞれONにすることで、マスにそれらの情報を追加表示するように</li>
+								</ul>
+							</li>
+							<li>その他調整
+								<ul>
+									<li>ステータスカードの表示切替ボタンを追加<br>
+									(タブレットなどはカードのドラッグ移動ができず、カードが邪魔になってマスが隠れてしまう場合に非表示にできるように)</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>マスの要求素材･CC表示を実装
-					<ul>
-						<li>カーソルを合わせたマスの素材･CCを表示するように</li>
-						<li>要求素材･CCカードの表示切替ボタンを追加</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.09 (2019/12/26)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>ホーリーアリナ</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>素材･CCカードのマウス追従機能を実装
-					<ul>
-						<li>素材･CCカードの追従切替ボタンを追加</li>
-						<li>追従機能がONの場合、マウスカーソル左側に一定の距離を空けてカードが追従するように</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.08 fix1 (2019/12/23)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>バグフィックス
+								<ul>
+									<li>綾野梨花のマスの位置が誤っていたのを修正</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>表示オプション機能を追加
-					<ul>
-						<li>画面左上に表示オプションの表示切替ボタンを追加</li>
-						<li>Lv・欠片の種類のチェックボックスをそれぞれONにすることで、マスにそれらの情報を追加表示するように</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.08 (2019/12/17)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>宮尾時雨</li>
+									<li>梨花・れん クリスマスver.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>その他調整
-					<ul>
-						<li>ステータスカードの表示切替ボタンを追加<br>
-						(タブレットなどはカードのドラッグ移動ができず、カードが邪魔になってマスが隠れてしまう場合に非表示にできるように)</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.07 (2019/12/09)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>綾野梨花</li>
+									<li>千歳ゆま</li>
+									<li>美国織莉子</li>
+									<li>保澄雫</li>
+									<li>毬子あやか</li>
+									<li>五十鈴れん</li>
+									<li>八雲みたま</li>
+									<li>日向茉莉</li>
+									<li>七瀬ゆきか</li>
+									<li>煌里ひかる</li>
+								</ul>
+							</li>
+							<li>Aboutに「Special Thanks」の項目を追加
+								<ul>
+									<li>本シミュレータ制作にご協力いただいた方を掲載させていただきます</li>
+								</ul>
+							</li>
+							<li>その他
+								<ul>
+									<li>広江ちはるの潜在アビリティの効果内容を修正<br />(「Charge後ダメージUP[Ⅳ]&ChargeディスクダメージUP[？]」⇒「Charge後ダメージUP[Ⅳ]&ChargeディスクダメージUP[Ⅱ]」)
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.09 (2019/12/26)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>ホーリーアリナ</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.06 fix1 (2019/11/30)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>三穂野せいらの基本ステータスを「☆4 Lv80」のものに置換</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.08 fix1 (2019/12/23)</b></h6>
-			<ul class="historyUl">
-				<li>バグフィックス
-					<ul>
-						<li>綾野梨花のマスの位置が誤っていたのを修正</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.06 (2019/11/29)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>三穂野せいら(☆3 Lv60)</li>
+									<li>吉良てまり</li>
+									<li>和泉十七夜</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.08 (2019/12/17)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>宮尾時雨</li>
-						<li>梨花・れん クリスマスver.</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.05 (2019/11/22)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>解放キャンセル機能を実装
+								<ul>
+									<li>解放済みのマスをクリックすると、そのマスまでを未解放状態に戻す</li>
+									<li>未解放状態にしたマス分、ステータス・能力解放数を減少させ、<br />
+									ディスク強化・アビリティ・スキルを一覧から削除する(払い戻し)</li>
+									<li>マスの上にカーソルを合わせると、キャンセル後の予定値を表示するように</li>
+								</ul>
+							</li>
+							<li>マスのロック機能を実装
+								<ul>
+									<li>画面右上にロックモード切替ボタンを追加</li>
+									<li>解放済みのマスをロックすると、それまでのマスを解放キャンセル不可に</li>
+									<li>未解放のマスをロックすると、それ以降のマスを解放不可に</li>
+									<li>リセットボタン押下時に、ロック状態を保持するかのオプションを追加</li>
+								</ul>
+							</li>
+							<li>ステータス欄をドラッグ操作で移動可能に
+								<ul>
+									<li>この実装に伴い、ステータス欄の折り畳み機能を廃止</li>
+									<li>左上のボタンは、押すとステータス欄を初期位置に戻す機能に変更</li>
+								</ul>
+							</li>
+							<li>バグフィックス
+								<ul>
+									<li>十咎ももこの潜在スキルの効果内容を修正（「ダメージカット無視」⇒「必ずダメージカット無視(自/1T)」）</li>
+									<li>ステータス表示、リセット、ツリーモード切替、習得アビリティ/スキルのボタン上のアイコンが選択できてしまう不具合を修正</li>
+									<li>未実装のキャラを選択した時にエラーが発生していた不具合を修正</li>
+								</ul>
+							</li>
+							<li>その他の調整
+								<ul>
+									<li>ステータス欄の文字色の仕様を変更（黒字：現在の値、青字：上昇予定値、赤字：減少予定値）</li>
+									<li>ポップ表示のサイズを縮小</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.07 (2019/12/09)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>綾野梨花</li>
-						<li>千歳ゆま</li>
-						<li>美国織莉子</li>
-						<li>保澄雫</li>
-						<li>毬子あやか</li>
-						<li>五十鈴れん</li>
-						<li>八雲みたま</li>
-						<li>日向茉莉</li>
-						<li>七瀬ゆきか</li>
-						<li>煌里ひかる</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.04 (2019/11/16)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>リセットボタンを追加</li>
+							<li>２種類のツリー表示モード、及び、表示切替ボタンを追加
+								<ul>
+									<li>ツリーモードⅠでは深さ毎のマスを集合して表示するように</li>
+									<li>ツリーモードⅡでは分岐毎のルートを明確に表示するように</li>
+								</ul>
+							</li>
+							<li>「習得アビリティ/スキル」ボタン上にカーソルを合わせた時に、マスのポップを全て表示するように</li>
+							<li>バグフィックス
+								<ul>
+									<li>水波レナの上昇値が１マス誤っていたのを修正 (×ATK87 ⇒ ○ATK84)</li>
+									<li>上昇値を表示した時にステータス欄がガタつくのを修正</li>
+									<li>キャラを切り替えた時に上昇値合計が赤字のままになっていたのを修正</li>
+								</ul>
+							</li>
+							<li>その他の調整
+								<ul>
+									<li>マス検索機能の波紋効果を最大２分で自動停止するように</li>
+									<li>ソース全体をリファクタリングし、処理を高速化</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>Aboutに「Special Thanks」の項目を追加
-					<ul>
-						<li>本シミュレータ制作にご協力いただいた方を掲載させていただきます</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.03 (2019/11/11)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>十咎ももこ</li>
+									<li>御園かりん</li>
+									<li>水波レナ</li>
+									<li>土岐すなお</li>
+									<li>秋野かえで</li>
+									<li>アリナ・グレイ</li>
+									<li>粟根こころ</li>
+								</ul>
+							</li>
+							<li>バグフィックス
+								<ul>
+									<li>キャラを変えた時に、前のキャラの強化内容が残るのを修正</li>
+									<li>「習得アビリティ/スキル」ボタンをタップした時に、ボタンのポップ表示が残るのを修正</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-				<li>その他
-					<ul>
-						<li>広江ちはるの潜在アビリティの効果内容を修正<br />(「Charge後ダメージUP[Ⅳ]&ChargeディスクダメージUP[？]」⇒「Charge後ダメージUP[Ⅳ]&ChargeディスクダメージUP[Ⅱ]」)
-						</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.02 (2019/11/10)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>由比鶴乃</li>
+									<li>七海やちよ</li>
+									<li>美樹さやか</li>
+									<li>広江ちはる</li>
+									<li>環いろは</li>
+									<li>奏遥香</li>
+									<li>暁美ほむら(眼鏡ver.)</li>
+									<li>呉キリカ</li>
+								</ul>
+							</li>
+							<li>レイアウトを全体的に縮小</li>
+							<li>ノートPC、タブレット、スマホ用に軽量モードを実装</li>
+							<li>マスにカーソルを合わせた時に、HP・ATK・DEFは強化内容をポップ表示しないように(表示量の削減)</li>
+							<li>先のマスまでを一括解放できるように</li>
+							<li>カーソルを置いたマスまでの上昇値合計を、ステータス欄に表示するように</li>
+							<li>上限を超えて解放しようとした時に、警告を表示するように</li>
+							<li>ステータス欄をクリックすると隠れるように。ボタンで再表示</li>
+							<li>「習得アビリティ/スキル」をドロップダウンリストからボタン＋サイドナビゲーションの構成に変更</li>
+								<ul>
+									<li>一覧表示時はマスを選択できないように(誤操作防止)</li>
+								</ul>
+							</li>
+							<li>代替機能の実装
+								<ul>
+									<li>スマホではヘッダーの「CharacterSelect」が表示されない為、<br />
+									クイックスタート画面に代替ボタンを設置
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.06 fix1 (2019/11/30)</b></h6>
-			<ul class="historyUl">
-				<li>三穂野せいらの基本ステータスを「☆4 Lv80」のものに置換</li>
-			</ul>
-			<h6><b>v0.06 (2019/11/29)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>三穂野せいら(☆3 Lv60)</li>
-						<li>吉良てまり</li>
-						<li>和泉十七夜</li>
-					</ul>
+				<li>
+					<div class="collapsible-header"><b>v0.01 (2019/11/07) [α version start.]</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>α版公開</li>
+							<li>選択可能キャラを追加
+								<ul>
+									<li>巴マミ</li>
+								</ul>
+							</li>
+							<li>実験機能として「NodeSearch(マス検索機能)」を実装</li>
+						</ul>
+					</div>
 				</li>
-			</ul>
-			<h6><b>v0.05 (2019/11/22)</b></h6>
-			<ul class="historyUl">
-				<li>解放キャンセル機能を実装
-					<ul>
-						<li>解放済みのマスをクリックすると、そのマスまでを未解放状態に戻す</li>
-						<li>未解放状態にしたマス分、ステータス・能力解放数を減少させ、<br />
-						ディスク強化・アビリティ・スキルを一覧から削除する(払い戻し)</li>
-						<li>マスの上にカーソルを合わせると、キャンセル後の予定値を表示するように</li>
-					</ul>
-				</li>
-				<li>マスのロック機能を実装
-					<ul>
-						<li>画面右上にロックモード切替ボタンを追加</li>
-						<li>解放済みのマスをロックすると、それまでのマスを解放キャンセル不可に</li>
-						<li>未解放のマスをロックすると、それ以降のマスを解放不可に</li>
-						<li>リセットボタン押下時に、ロック状態を保持するかのオプションを追加</li>
-					</ul>
-				</li>
-				<li>ステータス欄をドラッグ操作で移動可能に
-					<ul>
-						<li>この実装に伴い、ステータス欄の折り畳み機能を廃止</li>
-						<li>左上のボタンは、押すとステータス欄を初期位置に戻す機能に変更</li>
-					</ul>
-				</li>
-				<li>バグフィックス
-					<ul>
-						<li>十咎ももこの潜在スキルの効果内容を修正（「ダメージカット無視」⇒「必ずダメージカット無視(自/1T)」）</li>
-						<li>ステータス表示、リセット、ツリーモード切替、習得アビリティ/スキルのボタン上のアイコンが選択できてしまう不具合を修正</li>
-						<li>未実装のキャラを選択した時にエラーが発生していた不具合を修正</li>
-					</ul>
-				</li>
-				<li>その他の調整
-					<ul>
-						<li>ステータス欄の文字色の仕様を変更（黒字：現在の値、青字：上昇予定値、赤字：減少予定値）</li>
-						<li>ポップ表示のサイズを縮小</li>
-					</ul>
-				</li>
-			</ul>
-			<h6><b>v0.04 (2019/11/16)</b></h6>
-			<ul class="historyUl">
-				<li>リセットボタンを追加</li>
-				<li>２種類のツリー表示モード、及び、表示切替ボタンを追加
-					<ul>
-						<li>ツリーモードⅠでは深さ毎のマスを集合して表示するように</li>
-						<li>ツリーモードⅡでは分岐毎のルートを明確に表示するように</li>
-					</ul>
-				</li>
-				<li>「習得アビリティ/スキル」ボタン上にカーソルを合わせた時に、マスのポップを全て表示するように</li>
-				<li>バグフィックス
-					<ul>
-						<li>水波レナの上昇値が１マス誤っていたのを修正 (×ATK87 ⇒ ○ATK84)</li>
-						<li>上昇値を表示した時にステータス欄がガタつくのを修正</li>
-						<li>キャラを切り替えた時に上昇値合計が赤字のままになっていたのを修正</li>
-					</ul>
-				</li>
-				<li>その他の調整
-					<ul>
-						<li>マス検索機能の波紋効果を最大２分で自動停止するように</li>
-						<li>ソース全体をリファクタリングし、処理を高速化</li>
-					</ul>
-				</li>
-			</ul>
-			<h6><b>v0.03 (2019/11/11)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>十咎ももこ</li>
-						<li>御園かりん</li>
-						<li>水波レナ</li>
-						<li>土岐すなお</li>
-						<li>秋野かえで</li>
-						<li>アリナ・グレイ</li>
-						<li>粟根こころ</li>
-					</ul>
-				</li>
-				<li>バグフィックス
-					<ul>
-						<li>キャラを変えた時に、前のキャラの強化内容が残るのを修正</li>
-						<li>「習得アビリティ/スキル」ボタンをタップした時に、ボタンのポップ表示が残るのを修正</li>
-					</ul>
-				</li>
-			</ul>
-			<h6><b>v0.02 (2019/11/10)</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>由比鶴乃</li>
-						<li>七海やちよ</li>
-						<li>美樹さやか</li>
-						<li>広江ちはる</li>
-						<li>環いろは</li>
-						<li>奏遥香</li>
-						<li>暁美ほむら(眼鏡ver.)</li>
-						<li>呉キリカ</li>
-					</ul>
-				</li>
-				<li>レイアウトを全体的に縮小</li>
-				<li>ノートPC、タブレット、スマホ用に軽量モードを実装</li>
-				<li>マスにカーソルを合わせた時に、HP・ATK・DEFは強化内容をポップ表示しないように(表示量の削減)</li>
-				<li>先のマスまでを一括解放できるように</li>
-				<li>カーソルを置いたマスまでの上昇値合計を、ステータス欄に表示するように</li>
-				<li>上限を超えて解放しようとした時に、警告を表示するように</li>
-				<li>ステータス欄をクリックすると隠れるように。ボタンで再表示</li>
-				<li>「習得アビリティ/スキル」をドロップダウンリストからボタン＋サイドナビゲーションの構成に変更</li>
-					<ul>
-						<li>一覧表示時はマスを選択できないように(誤操作防止)</li>
-					</ul>
-				</li>
-				<li>代替機能の実装
-					<ul>
-						<li>スマホではヘッダーの「CharacterSelect」が表示されない為、<br />
-						クイックスタート画面に代替ボタンを設置
-						</li>
-					</ul>
-				</li>
-			</ul>
-			<h6><b>v0.01 (2019/11/07)</b></h6>
-			<ul class="historyUl">
-				<li>α版公開</li>
-				<li>選択可能キャラを追加
-					<ul>
-						<li>巴マミ</li>
-					</ul>
-				</li>
-				<li>実験機能として「NodeSearch(マス検索機能)」を実装</li>
 			</ul>
 		</div>
 		<div class="modal-footer">
@@ -604,12 +776,42 @@
 		</div>
 	</div>
 
+	<div id="modalSave" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h5>Save & Load</h5>
+			<p>※　開発中の為、現在未実装です。</p>
+			<p>キャラ毎に、コメント入力可能で最大５スロットにセーブできるようにする予定。<br>
+			データに対する機能としては「コピー」「削除」「URL出力」を予定。</p>
+			<p><br><br></p>
+			<div><a id="btnAllSaveClear" class="modal-close waves-effect waves-light btn red"><i class="material-icons left">clear</i>全セーブデータ削除</a></div>
+			<p>「全セーブデータ削除」は、お使いのブラウザから当シミュレータの保存データを全て消去します。<br>
+			全キャラを対象とし、クイックセーブのデータも含みます。</p>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<div id="modalOutputUrl" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h5>URL</h5>
+			<h6 id="strUrl"></h6>
+			<div><a id="btnUrlClip" class="waves-effect waves-light btn"><i class="material-icons left">content_copy</i>クリップボードにコピー</a></div>
+			<div id="urlTweetArea"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
 	<ul id="dropdownChara" class="dropdown-content">
 		<li><a href="javascript:void(0)" class="red-text">由比鶴乃<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="red-text">十咎ももこ<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="red-text">綾野梨花<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="red-text">佐倉杏子<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="red-text">御園かりん<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -633,6 +835,8 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)">千歳ゆま<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
+		<li><a href="javascript:void(0)">二葉さな<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
 		<li><a href="javascript:void(0)">アリナ・グレイ<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)">ホーリーアリナ<i class="material-icons red-text" style="display:none;">check</i></a></li>
@@ -645,11 +849,15 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">環いろは<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="orange-text">鹿目まどか<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">美国織莉子<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">保澄雫<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">粟根こころ<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="orange-text">天音月咲<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">鹿目まどか 晴着ver.<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -668,6 +876,12 @@
 		<li><a href="javascript:void(0)" class="purple-text">毬子あやか<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="purple-text">五十鈴れん<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="purple-text">深月フェリシア<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="purple-text">天音月夜<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="purple-text">暁美ほむら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="purple-text">梨花・れん クリスマスver.<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -819,6 +1033,18 @@
 	<a id="btnTreeMode" class="btn-floating waves-effect waves-light yellow darken-2 tooltipped" data-position="left" data-tooltip="ツリーモード" style="display:none;"><i class="material-icons">crop_rotate</i></a>
 	<a id="btnLockMode" class="btn-floating waves-effect waves-light grey darken-2 tooltipped" data-position="left" data-tooltip="ロックモード" style="display:none;"><i class="material-icons">lock</i></a>
 	<a id="btnAllReset" class="btn-floating waves-effect waves-light btn-small orange darken-2 tooltipped modal-trigger" href="#modalAllReset" data-position="left" data-tooltip="リセット" style="display:none;"><i class="material-icons">clear_all</i></a>
+
+	<a id="btnQuickSave" class="btn-floating waves-effect waves-light btn-small cyan accent-4 tooltipped" data-position="left" data-tooltip="クイックセーブ" style="display:none;"><i class="material-icons">cloud_upload</i></a>
+	<div class="fixed-action-btn" id="btnQuickLoadArea" style="display:none;">
+		<a id="btnQuickLoad" class="btn-floating waves-effect waves-light btn-small orange accent-3 tooltipped" data-position="left" data-tooltip="クイックロード"><i class="material-icons">cloud_download</i></a>
+		<ul>
+			<li><a id="btnQuickLoad3" class="btn-floating btn-small deep-orange darken-1 tooltipped" data-position="left" data-tooltip="スロット3"><i class="material-icons">filter_3</i></a></li>
+			<li><a id="btnQuickLoad2" class="btn-floating btn-small deep-orange darken-1 tooltipped" data-position="left" data-tooltip="スロット2"><i class="material-icons">filter_2</i></a></li>
+			<li><a id="btnQuickLoad1" class="btn-floating btn-small deep-orange darken-1 tooltipped" data-position="left" data-tooltip="スロット1"><i class="material-icons">filter_1</i></a></li>
+		</ul>
+	</div>
+	<a id="btnSave" class="btn-floating waves-effect waves-light btn-small green accent-4 tooltipped modal-trigger" href="#modalSave" data-position="left" data-tooltip="セーブ&ロード画面を開く" style="display:none;"><i class="material-icons">save</i></a>
+	<a id="btnOutputUrl" class="btn-floating waves-effect waves-light btn-small light-blue tooltipped modal-trigger" href="#modalOutputUrl" data-position="left" data-tooltip="URL出力" style="display:none;"><i class="material-icons">collections_bookmark</i></a>
 
 	<div class="map-area">
 		<table id="mapTable" class="map-table" style="display:none;">
@@ -987,6 +1213,7 @@
 		</div>
 	</footer>
 
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/app.min.js"></script>
 </body>
 </html>
