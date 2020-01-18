@@ -39,6 +39,27 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
+			<h6><b>2020/01/18　v0.14にアップデートしました。</b></h6>
+			<ul class="historyUl">
+				<li>選択可能キャラを追加
+					<ul>
+						<li>智珠らんか</li>
+					</ul>
+				</li>
+				<li>必要CC合計の表示機能を追加
+					<ul>
+						<li>画面左下に「必要CC合計」を表示</li>
+						<li>「必要CC合計」を押す毎に開閉できるように</li>
+						<li>マス上にカーソルを置くと、青字で加算後の値、赤字で減算後の値を表示するように</li>
+					</ul>
+				</li>
+				<li>その他調整
+					<ul>
+						<li>素材･CCカードのレイアウトを変更</li>
+						<li>HowToにショートカットキー一覧を追加</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>2020/01/14　v0.13 にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>ショートカットキーを実装
@@ -176,40 +197,6 @@
 					</ul>
 				</li>
 			</ul>
-			<h6><b>2020/01/01　v0.10にアップデートしました。</b></h6>
-			<ul class="historyUl">
-				<li>選択可能キャラを追加
-					<ul>
-						<li>美樹さやか 晴着ver.</li>
-						<li>鹿目まどか 晴着ver.</li>
-						<li>八雲みたま 晴着ver.</li>
-					</ul>
-				</li>
-				<li>マスの要求素材･CC表示を実装
-					<ul>
-						<li>カーソルを合わせたマスの素材･CCを表示するように</li>
-						<li>要求素材･CCカードの表示切替ボタンを追加</li>
-					</ul>
-				</li>
-				<li>素材･CCカードのマウス追従機能を実装
-					<ul>
-						<li>素材･CCカードの追従切替ボタンを追加</li>
-						<li>追従機能がONの場合、マウスカーソル左側に一定の距離を空けてカードが追従するように</li>
-					</ul>
-				</li>
-				<li>表示オプション機能を追加
-					<ul>
-						<li>画面左上に表示オプションの表示切替ボタンを追加</li>
-						<li>Lv・欠片の種類のチェックボックスをそれぞれONにすることで、マスにそれらの情報を追加表示するように</li>
-					</ul>
-				</li>
-				<li>その他調整
-					<ul>
-						<li>ステータスカードの表示切替ボタンを追加<br>
-						(タブレットなどはカードのドラッグ移動ができず、カードが邪魔になってマスが隠れてしまう場合に非表示にできるように)</li>
-					</ul>
-				</li>
-			</ul>
 			<div class="divider"></div>
 			<h5>【クイックスタート】</h5>
 			<p>「CharacterSelect」より対象キャラを選択すると、<br />
@@ -247,6 +234,7 @@
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>佐倉杏子</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>御園かりん</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>三穂野せいら</a></div>
+				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>智珠らんか</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>七海やちよ</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>水波レナ</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>美樹さやか</a></div>
@@ -448,6 +436,47 @@
 			<p>画面右下のURL出力ボタンを押すと、現在の入力状況をURL化することができます。<br>
 			表示されたURLをブラウザのアドレスバーに入力・移動することで、URL化した時の入力状況を復元できます。</p>
 			<p>自分のボード情報を人に渡したり、Twitterのツイートに貼り付けて公開することができます。</p>
+			<div class="divider"></div>
+			<h5>【ショートカットキー一覧】</h5>
+			<ul class="historyUl">
+				<li>Ctrl : アビリティ・スキル・ディスク強化のポップを全て表示</li>
+				<li>Alt+H : HowTo画面の開閉</li>
+				<li>Alt+N : CharacterSelectのリスト開閉</li>
+				<li>Alt+F : NodeSearchのリスト開閉</li>
+				<li>Alt+A : About画面の開閉</li>
+				<li>Alt+C : ステータスカードの表示切替</li>
+				<li>Alt+X : 素材CCカードの表示切替</li>
+				<li>Alt+V : 素材CCカードの追従モード切替</li>
+				<li>Alt+B : 必要CC合計表示切替</li>
+				<li>Alt+S : 習得アビリティ・スキル一覧の開閉</li>
+				<li>Alt+T : ツリーモード切替</li>
+				<li>Alt+L : ロックモード切替</li>
+				<li>Alt+R : リセット</li>
+				<li>Alt+Q : クイックセーブ</li>
+				<li>Alt+1 : クイックロード（スロット１）</li>
+				<li>Alt+2 : クイックロード（スロット２）</li>
+				<li>Alt+3 : クイックロード（スロット３）</li>
+				<li>Alt+W : セーブ＆ロード画面の開閉</li>
+				<li>Alt+U : URL出力画面の開閉</li>
+				<li>Alt+O : 表示オプションの表示切替</li>
+				<li>Alt+Shift+1 : 表示オプション「Lv1」ON⇔OFF</li>
+				<li>Alt+Shift+2 : 表示オプション「Lv2」ON⇔OFF</li>
+				<li>Alt+Shift+3 : 表示オプション「Lv3」ON⇔OFF</li>
+				<li>Alt+Shift+4 : 表示オプション「Lv4」ON⇔OFF</li>
+				<li>Alt+Shift+5 : 表示オプション「Lv5」ON⇔OFF</li>
+				<li>Alt+Shift+6 : 表示オプション「Lv6」ON⇔OFF</li>
+				<li>Alt+Shift+Q : 表示オプション「嫌悪」ON⇔OFF</li>
+				<li>Alt+Shift+W : 表示オプション「悲嘆」ON⇔OFF</li>
+				<li>Alt+Shift+E : 表示オプション「激怒」ON⇔OFF</li>
+				<li>Alt+Shift+R : 表示オプション「恐怖」ON⇔OFF</li>
+				<li>Alt+Shift+T : 表示オプション「驚嘆」ON⇔OFF</li>
+				<li>Alt+Shift+Y : 表示オプション「期待」ON⇔OFF</li>
+				<li>Alt+Shift+U : 表示オプション「恍惚」ON⇔OFF</li>
+				<li>Alt+Shift+I : 表示オプション「敬愛」ON⇔OFF</li>
+				<li>Alt+Shift+9 : 表示オプション「ALL ON」</li>
+				<li>Alt+Shift+0 : 表示オプション「ALL OFF」<br>
+				※ 表示オプションのON⇔OFFは、表示オプションカードが閉じた状態でも可能</li>
+			</ul>
 		</div>
 		<div class="modal-footer">
 			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -457,7 +486,7 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.13 alpha</p>
+			<p>v0.14 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
@@ -486,6 +515,31 @@
 			<h5>History</h5>
 			<ul class="collapsible expandable">
 				<li class="active">
+					<div class="collapsible-header"><b>v0.14 (2020/01/18)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>智珠らんか</li>
+								</ul>
+							</li>
+							<li>必要CC合計の表示機能を追加
+								<ul>
+									<li>画面左下に「必要CC合計」を表示</li>
+									<li>「必要CC合計」を押す毎に開閉できるように</li>
+									<li>マス上にカーソルを置くと、青字で加算後の値、赤字で減算後の値を表示するように</li>
+								</ul>
+							</li>
+							<li>その他調整
+								<ul>
+									<li>素材･CCカードのレイアウトを変更</li>
+									<li>HowToにショートカットキー一覧を追加</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
 					<div class="collapsible-header"><b>v0.13 (2020/01/14)</b></div>
 					<div class="collapsible-body">
 						<ul class="historyUl">
@@ -976,6 +1030,8 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="red-text">三穂野せいら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="red-text">智珠らんか<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="blue-text">七海やちよ<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="blue-text">水波レナ<i class="material-icons red-text" style="display:none;">check</i></a></li>
@@ -1042,13 +1098,15 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="purple-text">暁美ほむら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)" class="purple-text">梨花・れん クリスマスver.<i class="material-icons red-text" style="display:none;">check</i></a></li>
-		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="purple-text">古町みくら<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="purple-text">梨花・れん クリスマスver.<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="brown-text">八雲みたま<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="brown-text">八雲みたま 晴着ver.<i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li class="divider"></li>
+		<li><a href="javascript:void(0)" class="brown-text"><s class="grey-text">リヴィア・メディロス</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
 	</ul>
 	<ul id="dropdownSearch" class="dropdown-content">
 		<li><a href="javascript:void(0)" class="grey-text" id="soNone">None<i class="material-icons red-text">check</i></a></li>
@@ -1096,7 +1154,7 @@
 
 	<div id="materialCard" class="card small z-depth-3 draggItem init" style="display:none;">
 		<div class="card-content black-text">
-			<h7>要求素材・CC(ドラッグ移動可)</h7>
+			<h7><b>Material & CC Info.</b></h7>
 			<ul class="collection" id="materialUl">
 				<li class="collection-item" id="fragS" style="display:none;"><i class="fas fa-cubes fa-fw left"></i><span id="fragSName"></span><span class="right" id="fragSNm"></span></li>
 				<li class="collection-item" id="fragM" style="display:none;"><i class="fas fa-dice-d6 fa-fw left"></i><span id="fragMName"></span><span class="right" id="fragMNm"></span></li>
@@ -1193,6 +1251,21 @@
 	<a id="btnLockMode" class="btn-floating waves-effect waves-light grey darken-2 tooltipped" data-position="left" data-tooltip="ロックモード" style="display:none;"><i class="material-icons">lock</i></a>
 	<a id="btnAllReset" class="btn-floating waves-effect waves-light btn-small orange darken-2 tooltipped modal-trigger" href="#modalAllReset" data-position="left" data-tooltip="リセット" style="display:none;"><i class="material-icons">clear_all</i></a>
 
+	<a id="btnTotalCc" class="btn-floating waves-effect waves-light btn-small amber accent-4 tooltipped" data-position="right" data-tooltip="必要CC合計表示" style="display:none;">
+		<i class="fas fa-coins fa-fw left"></i>
+		<span class="black-text">
+			<table class="white">
+				<tbody>
+					<tr>
+						<th>Total CC</td>
+						<td id="totalCcTd"><span id="totalCc">0</span></td>
+						<td id="totalCcPlusTd"> ( <span id="totalCcPlusSign">+</span> <span id="totalCcPlus">0</span> )</td>
+					</tr>
+				</tbody>
+			</table>
+		</span>
+	</a>
+	
 	<a id="btnQuickSave" class="btn-floating waves-effect waves-light btn-small cyan accent-4 tooltipped" data-position="left" data-tooltip="クイックセーブ" style="display:none;"><i class="material-icons">cloud_upload</i></a>
 	<div class="fixed-action-btn" id="btnQuickLoadArea" style="display:none;">
 		<a id="btnQuickLoad" class="btn-floating waves-effect waves-light btn-small orange accent-3 tooltipped" data-position="left" data-tooltip="クイックロード"><i class="material-icons">cloud_download</i></a>
