@@ -39,6 +39,19 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
+			<h6><b>2020/01/21　v0.16にアップデートしました。</b></h6>
+			<ul class="historyUl">
+				<li>素材累計表示機能を追加
+					<ul>
+						<li>画面右上に素材累計表示ボタンを追加</li>
+						<li>現在の解放済みマスの素材累計、および、最大要求数を表示するように</li>
+						<li>欠片・オーブ・ブック・敵ドロップ毎にタブでまとめ、タブクリックで切替ができるように</li>
+						<li>「上までスクロール」「下までスクロール」ボタンを設置</li>
+						<li>[←][→]キーでタブ切替ができるように</li>
+						<li>[Ctrl+↑]で上まで、[Ctrl+↓]で下までスクロールするように</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>2020/01/20　v0.15にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
@@ -497,7 +510,7 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.15 alpha</p>
+			<p>v0.16 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
@@ -526,6 +539,23 @@
 			<h5>History</h5>
 			<ul class="collapsible expandable">
 				<li class="active">
+					<div class="collapsible-header"><b>v0.16 (2020/01/21)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>素材累計表示機能を追加
+								<ul>
+									<li>ボード右上に素材累計表示ボタンを追加</li>
+									<li>現在の解放済みマスの素材累計、および、最大要求数を表示するように</li>
+									<li>欠片・オーブ・ブック・敵ドロップ毎にタブでまとめ、タブクリックで切替ができるように</li>
+									<li>「上までスクロール」「下までスクロール」ボタンを設置</li>
+									<li>[←][→]キーでタブ切替ができるように</li>
+									<li>[Ctrl+↑]で上まで、[Ctrl+↓]で下までスクロールするように</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
 					<div class="collapsible-header"><b>v0.15 (2020/01/20)</b></div>
 					<div class="collapsible-body">
 						<ul class="historyUl">
@@ -1001,6 +1031,99 @@
 		</div>
 	</div>
 
+	<div id="modalAllMaterials" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h5>素材累計</h5>
+			<div class="row">
+				<div class="col s12">
+					<ul class="tabs">
+						<li class="tab col s3"><a id="tabPieces" class="active" href="#pieces"><i class="fas fa-cubes"></i></a></li>
+						<li class="tab col s3"><a id="tabOrbs" href="#orbs"><i class="fas fa-chess-king"></i></a></li>
+						<li class="tab col s3"><a id="tabBooks" href="#books"><i class="fas fa-quran"></i></a></li>
+						<li class="tab col s3"><a id="tabDrops" href="#drops"><i class="fas fa-dragon"></i></a></li>
+					</ul>
+				</div>
+				<div id="pieces" class="col s12">
+					<ul class="collection" id="listPieces">
+						<li class="collection-item fa"><i class="fas fa-cubes fa-fw left light-blue-text"></i>嫌悪の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fb"><i class="fas fa-dice-d6 fa-fw left light-blue-text"></i>嫌悪の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fc"><i class="fas fa-dice-d20 fa-fw left light-blue-text"></i>嫌悪の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fd"><i class="fas fa-cubes fa-fw left green-text"></i>悲嘆の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fe"><i class="fas fa-dice-d6 fa-fw left green-text"></i>悲嘆の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ff"><i class="fas fa-dice-d20 fa-fw left green-text"></i>悲嘆の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fg"><i class="fas fa-cubes fa-fw left amber-text"></i>激怒の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fh"><i class="fas fa-dice-d6 fa-fw left amber-text"></i>激怒の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fi"><i class="fas fa-dice-d20 fa-fw left amber-text"></i>激怒の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fj"><i class="fas fa-cubes fa-fw left grey-text"></i>恐怖の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fk"><i class="fas fa-dice-d6 fa-fw left grey-text"></i>恐怖の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fl"><i class="fas fa-dice-d20 fa-fw left grey-text"></i>恐怖の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fm"><i class="fas fa-cubes fa-fw left pink-text"></i>驚嘆の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fn"><i class="fas fa-dice-d6 fa-fw left pink-text"></i>驚嘆の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fo"><i class="fas fa-dice-d20 fa-fw left pink-text"></i>驚嘆の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fp"><i class="fas fa-cubes fa-fw left red-text"></i>期待の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fq"><i class="fas fa-dice-d6 fa-fw left red-text"></i>期待の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fr"><i class="fas fa-dice-d20 fa-fw left red-text"></i>期待の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fs"><i class="fas fa-cubes fa-fw left indigo-text"></i>恍惚の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ft"><i class="fas fa-dice-d6 fa-fw left indigo-text"></i>恍惚の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fu"><i class="fas fa-dice-d20 fa-fw left indigo-text"></i>恍惚の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fv"><i class="fas fa-cubes fa-fw left blue-grey-text"></i>敬愛の欠片<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fw"><i class="fas fa-dice-d6 fa-fw left blue-grey-text"></i>敬愛の欠片+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item fx"><i class="fas fa-dice-d20 fa-fw left blue-grey-text"></i>敬愛の欠片++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+					</ul>
+				</div>
+				<div id="orbs" class="col s12">
+					<ul class="collection" id="listOrbs">
+						<li class="collection-item da"><i class="fas fa-chess-pawn fa-fw left red-text"></i>フレイムオーブ<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item db"><i class="fas fa-chess-knight fa-fw left red-text"></i>フレイムオーブ+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dc"><i class="fas fa-chess-king fa-fw left red-text"></i>フレイムオーブ++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dd"><i class="fas fa-chess-pawn fa-fw left blue-text"></i>アクアオーブ<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item de"><i class="fas fa-chess-knight fa-fw left blue-text"></i>アクアオーブ+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item df"><i class="fas fa-chess-king fa-fw left blue-text"></i>アクアオーブ++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dg"><i class="fas fa-chess-pawn fa-fw left green-text"></i>フォレストオーブ<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dh"><i class="fas fa-chess-knight fa-fw left green-text"></i>フォレストオーブ+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item di"><i class="fas fa-chess-king fa-fw left green-text"></i>フォレストオーブ++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dj"><i class="fas fa-chess-pawn fa-fw left amber-text"></i>ライトオーブ<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dk"><i class="fas fa-chess-knight fa-fw left amber-text"></i>ライトオーブ+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dl"><i class="fas fa-chess-king fa-fw left amber-text"></i>ライトオーブ++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dm"><i class="fas fa-chess-pawn fa-fw left purple-text"></i>ダークオーブ<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dn"><i class="fas fa-chess-knight fa-fw left purple-text"></i>ダークオーブ+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item do"><i class="fas fa-chess-king fa-fw left purple-text"></i>ダークオーブ++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item dp"><i class="fas fa-gem fa-fw left blue-grey-text"></i>レインボーオーブ<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+					</ul>
+				</div>
+				<div id="books" class="col s12">
+					<ul class="collection" id="listBooks">
+						<li class="collection-item ea"><i class="fas fa-scroll fa-fw left red-text"></i>フレイムブック<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item eb"><i class="fas fa-torah fa-fw left red-text"></i>フレイムブック+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ec"><i class="fas fa-quran fa-fw left red-text"></i>フレイムブック++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ed"><i class="fas fa-scroll fa-fw left blue-text"></i>アクアブック<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ee"><i class="fas fa-torah fa-fw left blue-text"></i>アクアブック+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ef"><i class="fas fa-quran fa-fw left blue-text"></i>アクアブック++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item eg"><i class="fas fa-scroll fa-fw left green-text"></i>フォレストブック<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item eh"><i class="fas fa-torah fa-fw left green-text"></i>フォレストブック+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ei"><i class="fas fa-quran fa-fw left green-text"></i>フォレストブック++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ej"><i class="fas fa-scroll fa-fw left amber-text"></i>ライトブック<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item ek"><i class="fas fa-torah fa-fw left amber-text"></i>ライトブック+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item el"><i class="fas fa-quran fa-fw left amber-text"></i>ライトブック++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item em"><i class="fas fa-scroll fa-fw left purple-text"></i>ダークブック<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item en"><i class="fas fa-torah fa-fw left purple-text"></i>ダークブック+<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+						<li class="collection-item eo"><i class="fas fa-quran fa-fw left purple-text"></i>ダークブック++<span class="right"><span class="nm">0</span><span> / </span><span class="maxNm">0</span></span></li>
+					</ul>
+				</div>
+				<div id="drops" class="col s12">
+					<ul class="collection" id="listDrop">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<span class="left">[←][→]キーでタブ切替</span><span class="left" style="display:none;"><label><input type="checkbox" class="filled-in" id="lockNodeGetedFlg" /><span>ロックしたマスを取得済みとする</span></label></span>
+			<a id="btnScrollTop" class="btn-floating waves-effect waves-light btn-small grey tooltipped" data-position="bottom" data-tooltip="上までスクロール"><i class="material-icons">arrow_upward</i></a>
+			<a id="btnScrollBottom" class="btn-floating waves-effect waves-light btn-small grey tooltipped" data-position="bottom" data-tooltip="下までスクロール"><i class="material-icons">arrow_downward</i></a>
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
 	<div id="modalAllReset" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<p>全ての解放状態をリセットします。よろしいですか？</p>
@@ -1278,6 +1401,7 @@
 	<a id="btnTreeMode" class="btn-floating waves-effect waves-light yellow darken-2 tooltipped" data-position="left" data-tooltip="ツリーモードⅠ" style="display:none;"><i class="material-icons">crop_rotate</i></a>
 	<a id="btnLockMode" class="btn-floating waves-effect waves-light grey darken-2 tooltipped" data-position="left" data-tooltip="ロックモード" style="display:none;"><i class="material-icons">lock</i></a>
 	<a id="btnAllReset" class="btn-floating waves-effect waves-light btn-small orange darken-2 tooltipped modal-trigger" href="#modalAllReset" data-position="left" data-tooltip="リセット" style="display:none;"><i class="material-icons">clear_all</i></a>
+	<a id="btnModalAllMaterials" class="btn-floating waves-effect waves-light brown darken-1 tooltipped modal-trigger" href="#modalAllMaterials" data-position="left" data-tooltip="素材累計表示" style="display:none;"><i class="fas fa-paw"></i></a>
 
 	<a id="btnTotalCc" class="btn-floating waves-effect waves-light btn-small amber accent-4 tooltipped" data-position="right" data-tooltip="必要CC合計表示" style="display:none;">
 		<i class="fas fa-coins fa-fw left"></i>
