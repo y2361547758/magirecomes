@@ -39,6 +39,20 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
+			<h6><b>2020/02/03　v0.17 fix2 にアップデートしました。</b></h6>
+			<ul class="historyUl">
+				<li>選択可能キャラを追加
+					<ul>
+						<li>鈴鹿さくや</li>
+					</ul>
+				</li>
+				<li>ヘッダーに設定ボタンを追加
+					<ul>
+						<li>シミュレータ内の各種設定項目を設置予定</li>
+						<li>Save & Load画面の全セーブデータ削除ボタンを設定画面に移動</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>2020/02/01　v0.17 fix1 にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>バグフィックス
@@ -127,6 +141,7 @@
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>広江ちはる</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>日向茉莉</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>宮尾時雨</a></div>
+				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>鈴鹿さくや</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>環いろは</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>鹿目まどか</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>美国織莉子</a></div>
@@ -365,7 +380,7 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.17 fix1 alpha</p>
+			<p>v0.17 fix2 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
@@ -396,6 +411,24 @@
 			<h5>History</h5>
 			<ul class="collapsible expandable">
 				<li class="active">
+					<div class="collapsible-header"><b>v0.17 fix2 (2020/02/03)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>鈴鹿さくや</li>
+								</ul>
+							</li>
+							<li>ヘッダーに設定ボタンを追加
+								<ul>
+									<li>シミュレータ内の各種設定項目を設置予定</li>
+									<li>Save & Load画面の全セーブデータ削除ボタンを設定画面に移動</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
 					<div class="collapsible-header"><b>v0.17 fix1 (2020/02/01)</b></div>
 					<div class="collapsible-body">
 						<ul class="historyUl">
@@ -1026,10 +1059,24 @@
 			<p>※　開発中の為、現在未実装です。</p>
 			<p>キャラ毎に、コメント入力可能で最大５スロットにセーブできるようにする予定。<br>
 			データに対する機能としては「コピー」「削除」「URL出力」を予定。</p>
-			<p><br><br></p>
-			<div><a id="btnAllSaveClear" class="modal-close waves-effect waves-light btn red"><i class="material-icons left">clear</i>全セーブデータ削除</a></div>
-			<p>「全セーブデータ削除」は、お使いのブラウザから当シミュレータの保存データを全て消去します。<br>
-			全キャラを対象とし、クイックセーブのデータも含みます。</p>
+			
+			<table>
+				<tr>
+					<td rowspan=2>1</td>
+					<td><span class="grey-text">9999/99/99 99:99:99<span></td>
+					<td><a class="waves-effect waves-light btn">Save</a></td>
+					<td><a class="waves-effect waves-light btn">Load</a></td>
+					<td><a class="waves-effect waves-light btn">Copy</a></td>
+					<td><a class="waves-effect waves-light btn">Delete</a></td>
+				</tr>
+				<tr>
+					<td colspan=5>
+						<div class="input-field">
+							<input placeholder="コメント（30文字まで）" id="first_name" type="text" class="validate">
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div class="modal-footer">
 			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -1042,6 +1089,22 @@
 			<h6 id="strUrl"></h6>
 			<div><a id="btnUrlClip" class="waves-effect waves-light btn"><i class="material-icons left">content_copy</i>クリップボードにコピー</a></div>
 			<div id="urlTweetArea"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<div id="modalProperties" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>設定</h4>
+			<div class="divider"></div>
+			<div class="section">
+				<h5>【セーブデータ関連】</h5>
+				<div><a id="btnAllSaveClear" class="modal-close waves-effect waves-light btn red"><i class="material-icons left">clear</i>全セーブデータ削除</a></div>
+				<p>「全セーブデータ削除」は、お使いのブラウザから当シミュレータの保存データを全て消去します。全キャラを対象とし、クイックセーブのデータも含みます。</p>
+			</div>
+			<div class="divider"></div>
 		</div>
 		<div class="modal-footer">
 			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -1097,7 +1160,7 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)">宮尾時雨<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)"><s class="grey-text">鈴鹿さくや</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li><a href="javascript:void(0)">鈴鹿さくや<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">環いろは<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -1186,6 +1249,7 @@
 					<li style="width:200px;"><a id="btnCharacterSelect" class="dropdown-trigger" href="javascript:void(0)" data-target="dropdownChara"><span id="charcterSelectTitle">CharacterSelect</span><i class="material-icons right">arrow_drop_down</i></a></li>
 					<li style="width:200px;display:none;" id="searchNodeTitle"><a  id="btnNodeSearch" class="dropdown-trigger" href="javascript:void(0)" data-target="dropdownSearch">NodeSearch<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a id="btnModalAbout" href="#modalAbout" data-target="modalAbout" class="modal-trigger">About</a></li>
+					<li><a id="btnProperties" class="btn-floating waves-effect waves-light btn-small blue-grey lighten-3 tooltipped modal-trigger" href="#modalProperties" data-position="left" data-tooltip="設定"><i class="material-icons">settings</i></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -1315,7 +1379,7 @@
 			<li><a id="btnQuickLoad1" class="btn-floating btn-small deep-orange darken-1 tooltipped" data-position="left" data-tooltip="スロット1"><i class="material-icons">filter_1</i></a></li>
 		</ul>
 	</div>
-	<a id="btnSave" class="btn-floating waves-effect waves-light btn-small green accent-4 tooltipped modal-trigger" href="#modalSave" data-position="left" data-tooltip="セーブ&ロード画面を開く" style="display:none;"><i class="material-icons">save</i></a>
+	<a id="btnSave" class="btn-floating waves-effect waves-light btn-small green accent-4 tooltipped modal-trigger" href="#modalSave" data-position="left" data-tooltip="セーブ&ロード画面を開く" style="display:none;" disabled><i class="material-icons">save</i></a>
 	<a id="btnOutputUrl" class="btn-floating waves-effect waves-light btn-small light-blue tooltipped modal-trigger" href="#modalOutputUrl" data-position="left" data-tooltip="URL出力" style="display:none;"><i class="material-icons">collections_bookmark</i></a>
 
 	<div class="map-area">
