@@ -39,6 +39,22 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
+			<h6><b>2020/02/07　v0.18 にアップデートしました。α最終版です。</b></h6>
+			<ul class="historyUl">
+				<li>選択可能キャラを追加
+					<ul>
+						<li>竜城明日香</li>
+						<li>春名このみ</li>
+						<li>加賀見まさら</li>
+						<li>美凪ささら</li>
+					</ul>
+				</li>
+				<li>セーブ&ロード画面を実装
+					<ul>
+						<li>キャラ毎に５スロット（コメント付き）で保存できるように</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>2020/02/03　v0.17 fix2 にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
@@ -127,6 +143,7 @@
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>南津涼子</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>七海やちよ</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>水波レナ</a></div>
+				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>竜城明日香</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>志伸あきら</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>美樹さやか</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>土岐すなお</a></div>
@@ -135,6 +152,7 @@
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>巴マミ</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>秋野かえで</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>千歳ゆま</a></div>
+				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>春名このみ</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>二葉さな</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>アリナ・グレイ</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>ホーリーアリナ</a></div>
@@ -145,7 +163,9 @@
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>環いろは</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>鹿目まどか</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>美国織莉子</a></div>
+				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>加賀見まさら</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>保澄雫</a></div>
+				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>美凪ささら</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>粟根こころ</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>天音月咲</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>和泉十七夜</a></div>
@@ -380,7 +400,7 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.17 fix2 alpha</p>
+			<p>v0.18 alpha</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
@@ -411,6 +431,26 @@
 			<h5>History</h5>
 			<ul class="collapsible expandable">
 				<li class="active">
+					<div class="collapsible-header"><b>v0.18 (2020/02/07) [α version end.]</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>選択可能キャラを追加
+								<ul>
+									<li>竜城明日香</li>
+									<li>春名このみ</li>
+									<li>加賀見まさら</li>
+									<li>美凪ささら</li>
+								</ul>
+							</li>
+							<li>セーブ&ロード画面を実装
+								<ul>
+									<li>キャラ毎に５スロット（コメント付き）で保存できるように</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
 					<div class="collapsible-header"><b>v0.17 fix2 (2020/02/03)</b></div>
 					<div class="collapsible-body">
 						<ul class="historyUl">
@@ -1056,23 +1096,99 @@
 	<div id="modalSave" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Save & Load</h5>
-			<p>※　開発中の為、現在未実装です。</p>
-			<p>キャラ毎に、コメント入力可能で最大５スロットにセーブできるようにする予定。<br>
-			データに対する機能としては「コピー」「削除」「URL出力」を予定。</p>
-			
 			<table>
 				<tr>
-					<td rowspan=2>1</td>
-					<td><span class="grey-text">9999/99/99 99:99:99<span></td>
-					<td><a class="waves-effect waves-light btn">Save</a></td>
-					<td><a class="waves-effect waves-light btn">Load</a></td>
-					<td><a class="waves-effect waves-light btn">Copy</a></td>
-					<td><a class="waves-effect waves-light btn">Delete</a></td>
+					<td class="saveNm center" rowspan=2><b>1</b></td>
+					<td class="saveTime center"><span id="saveDate1" class="grey-text">9999/99/99 99:99:99<span></td>
+					<td>
+						<a id="btnSave1" class="waves-effect waves-light btn-small savebtns cyan">Save</a>
+						<a id="btnLoad1" class="waves-effect waves-light btn-small savebtns orange">Load</a>
+						<a id="btnCopy1" class="waves-effect waves-light btn-small savebtns lime">Copy</a>
+						<a id="btnDelete1" class="waves-effect waves-light btn-small savebtns red">Delete</a>
+						<a id="btnCopyTo1" class="waves-effect waves-light btn-small copybtns lime">Copy To Here</a>
+						<a id="btnCopyCancel1" class="waves-effect waves-light btn-small copybtns deep-orange">Cancel</a>
+					</td>
 				</tr>
 				<tr>
-					<td colspan=5>
+					<td colspan=2>
 						<div class="input-field">
-							<input placeholder="コメント（30文字まで）" id="first_name" type="text" class="validate">
+							<input id="saveCmt1" type="text" placeholder="コメント（50文字まで）" maxlength="50">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="saveNm center" rowspan=2><b>2</b></td>
+					<td class="saveTime center"><span id="saveDate2" class="grey-text">9999/99/99 99:99:99<span></td>
+					<td>
+						<a id="btnSave2" class="waves-effect waves-light btn-small savebtns cyan">Save</a>
+						<a id="btnLoad2" class="waves-effect waves-light btn-small savebtns orange">Load</a>
+						<a id="btnCopy2" class="waves-effect waves-light btn-small savebtns lime">Copy</a>
+						<a id="btnDelete2" class="waves-effect waves-light btn-small savebtns red">Delete</a>
+						<a id="btnCopyTo2" class="waves-effect waves-light btn-small copybtns lime">Copy To Here</a>
+						<a id="btnCopyCancel2" class="waves-effect waves-light btn-small copybtns deep-orange">Cancel</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<div class="input-field">
+							<input id="saveCmt2" type="text" placeholder="コメント（50文字まで）" maxlength="50">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="saveNm center" rowspan=2><b>3</b></td>
+					<td class="saveTime center"><span id="saveDate3" class="grey-text">9999/99/99 99:99:99<span></td>
+					<td>
+						<a id="btnSave3" class="waves-effect waves-light btn-small savebtns cyan">Save</a>
+						<a id="btnLoad3" class="waves-effect waves-light btn-small savebtns orange">Load</a>
+						<a id="btnCopy3" class="waves-effect waves-light btn-small savebtns lime">Copy</a>
+						<a id="btnDelete3" class="waves-effect waves-light btn-small savebtns red">Delete</a>
+						<a id="btnCopyTo3" class="waves-effect waves-light btn-small copybtns lime">Copy To Here</a>
+						<a id="btnCopyCancel3" class="waves-effect waves-light btn-small copybtns deep-orange">Cancel</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<div class="input-field">
+							<input id="saveCmt3" type="text" placeholder="コメント（50文字まで）" maxlength="50">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="saveNm center" rowspan=2><b>4</b></td>
+					<td class="saveTime center"><span id="saveDate4" class="grey-text">9999/99/99 99:99:99<span></td>
+					<td>
+						<a id="btnSave4" class="waves-effect waves-light btn-small savebtns cyan">Save</a>
+						<a id="btnLoad4" class="waves-effect waves-light btn-small savebtns orange">Load</a>
+						<a id="btnCopy4" class="waves-effect waves-light btn-small savebtns lime">Copy</a>
+						<a id="btnDelete4" class="waves-effect waves-light btn-small savebtns red">Delete</a>
+						<a id="btnCopyTo4" class="waves-effect waves-light btn-small copybtns lime">Copy To Here</a>
+						<a id="btnCopyCancel4" class="waves-effect waves-light btn-small copybtns deep-orange">Cancel</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<div class="input-field">
+							<input id="saveCmt4" type="text" placeholder="コメント（50文字まで）" maxlength="50">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="saveNm center" rowspan=2><b>5</b></td>
+					<td class="saveTime center"><span id="saveDate5" class="grey-text">9999/99/99 99:99:99<span></td>
+					<td>
+						<a id="btnSave5" class="waves-effect waves-light btn-small savebtns cyan">Save</a>
+						<a id="btnLoad5" class="waves-effect waves-light btn-small savebtns orange">Load</a>
+						<a id="btnCopy5" class="waves-effect waves-light btn-small savebtns lime">Copy</a>
+						<a id="btnDelete5" class="waves-effect waves-light btn-small savebtns red">Delete</a>
+						<a id="btnCopyTo5" class="waves-effect waves-light btn-small copybtns lime">Copy To Here</a>
+						<a id="btnCopyCancel5" class="waves-effect waves-light btn-small copybtns deep-orange">Cancel</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<div class="input-field">
+							<input id="saveCmt5" type="text" placeholder="コメント（50文字まで）" maxlength="50">
 						</div>
 					</td>
 				</tr>
@@ -1132,7 +1248,7 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="blue-text">水波レナ<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)" class="blue-text"><s class="grey-text">竜城明日香</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li><a href="javascript:void(0)" class="blue-text">竜城明日香<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="blue-text">志伸あきら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -1150,7 +1266,7 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)">千歳ゆま<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)"><s class="grey-text">春名このみ</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li><a href="javascript:void(0)">春名このみ<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)">二葉さな<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -1172,11 +1288,11 @@
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">美国織莉子<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)" class="orange-text"><s class="grey-text">加賀見まさら</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li><a href="javascript:void(0)" class="orange-text">加賀見まさら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">保澄雫<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
-		<li><a href="javascript:void(0)" class="orange-text"><s class="grey-text">美凪ささら</s><i class="material-icons red-text" style="display:none;">check</i></a></li>
+		<li><a href="javascript:void(0)" class="orange-text">美凪ささら<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
 		<li><a href="javascript:void(0)" class="orange-text">粟根こころ<i class="material-icons red-text" style="display:none;">check</i></a></li>
 		<li class="divider"></li>
@@ -1387,7 +1503,7 @@
 			<li><a id="btnQuickLoad1" class="btn-floating btn-small deep-orange darken-1 tooltipped" data-position="left" data-tooltip="スロット1"><i class="material-icons">filter_1</i></a></li>
 		</ul>
 	</div>
-	<a id="btnSave" class="btn-floating waves-effect waves-light btn-small green accent-4 tooltipped modal-trigger" href="#modalSave" data-position="left" data-tooltip="セーブ&ロード画面を開く" style="display:none;" disabled><i class="material-icons">save</i></a>
+	<a id="btnSaveAndLoad" class="btn-floating waves-effect waves-light btn-small green accent-4 tooltipped modal-trigger" href="#modalSave" data-position="left" data-tooltip="セーブ&ロード画面を開く" style="display:none;"><i class="material-icons">save</i></a>
 	<a id="btnOutputUrl" class="btn-floating waves-effect waves-light btn-small light-blue tooltipped modal-trigger" href="#modalOutputUrl" data-position="left" data-tooltip="URL出力" style="display:none;"><i class="material-icons">collections_bookmark</i></a>
 
 	<div class="map-area">
