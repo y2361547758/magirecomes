@@ -39,6 +39,14 @@
 			ゲーム内では解放が一度きりの精神強化を自由に試すことができます。</p>
 			<div class="divider"></div>
 			<h5>【アップデート情報】</h5>
+			<h6><b>2020/03/21　v0.21 fix1  にアップデートしました。</b></h6>
+			<ul class="historyUl">
+				<li>バグフィックス
+					<ul>
+						<li>「志伸あきら」「木崎衣美里」のセーブが正しくできない問題を修正</li>
+					</ul>
+				</li>
+			</ul>
 			<h6><b>2020/03/02　v0.21  にアップデートしました。</b></h6>
 			<ul class="historyUl">
 				<li>選択可能キャラを追加
@@ -128,6 +136,7 @@
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>三穂野せいら</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>智珠らんか</a></div>
 				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>南津涼子</a></div>
+				<div><a class="waves-effect waves-light btn red"><i class="material-icons left">person_outline</i>安積はぐむ</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>七海やちよ</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>水波レナ</a></div>
 				<div><a class="waves-effect waves-light btn blue"><i class="material-icons left">person_outline</i>竜城明日香</a></div>
@@ -150,6 +159,7 @@
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>日向茉莉</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>宮尾時雨</a></div>
 				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>鈴鹿さくや</a></div>
+				<div><a class="waves-effect waves-light btn"><i class="material-icons left">person_outline</i>恵萌花</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>環いろは</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>鹿目まどか</a></div>
 				<div><a class="waves-effect waves-light btn orange"><i class="material-icons left">person_outline</i>美国織莉子</a></div>
@@ -391,7 +401,7 @@
 	<div id="modalAbout" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h5>Version</h5>
-			<p>v0.21 beta</p>
+			<p>v0.21 fix1 beta</p>
 			<div class="divider"></div>
 			<h5>Author</h5>
 			<p>BBQ (Twitter: @BBQ17882590 )</p>
@@ -423,6 +433,18 @@
 			<div class="divider"></div>
 			<h5>History</h5>
 			<ul class="collapsible expandable">
+				<li class="active">
+					<div class="collapsible-header"><b>v0.21 fix1 (2020/03/21)</b></div>
+					<div class="collapsible-body">
+						<ul class="historyUl">
+							<li>バグフィックス
+								<ul>
+									<li>「志伸あきら」「木崎衣美里」のセーブが正しくできない問題を修正</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
 				<li class="active">
 					<div class="collapsible-header"><b>v0.21 (2020/03/02)</b></div>
 					<div class="collapsible-body">
@@ -1279,11 +1301,18 @@
 			<h4>設定</h4>
 			<div class="divider"></div>
 			<div class="section">
-				<h5>【セーブデータ関連】</h5>
-				<div><a id="btnAllSaveClear" class="modal-close waves-effect waves-light btn red"><i class="material-icons left">clear</i>全セーブデータ削除</a></div>
-				<p>「全セーブデータ削除」は、お使いのブラウザから当シミュレータの保存データを全て消去します。全キャラを対象とし、クイックセーブのデータも含みます。</p>
+				<h5>【セーブデータのエクスポート】</h5>
+				<div><a id="btnSaveExport" class="waves-effect waves-light btn blue"><i class="material-icons left">file_download</i>エクスポート</a></div>
+				<div><a id="download" class="waves-effect waves-light btn blue" style="display:none;"><i class="material-icons left">file_download</i>ダウンロード</a></div>
+				<p>現在の全セーブデータをファイルにエクスポートします。<br>エクスポートボタンを押した後、任意の場所に保存してください。</p>
+				<p>※対象データは「クイックセーブ」及び「セーブ」のデータです。その他の設定はエクスポートされません。</p>
 			</div>
 			<div class="divider"></div>
+			<div class="section">
+				<h5>【全セーブデータ削除】</h5>
+				<div><a id="btnAllSaveClear" class="modal-close waves-effect waves-light btn red"><i class="material-icons left">clear</i>全セーブデータ削除</a></div>
+				<p>「全セーブデータ削除」は、お使いのブラウザから当シミュレータの保存データを全て消去します。全キャラを対象とし、クイックセーブのデータ、及び、その他の設定も含みます。</p>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<a href="javascript:void(0)" class="modal-close waves-effect waves-green btn-flat">Close</a>
