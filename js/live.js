@@ -90,6 +90,7 @@ _growtypeRate = {// hp, atk, def
     DEFHP:   [4.03, 3.97, 4.06],
     HP:      [4.12, 3.91, 3.94]
 }
+_routeCount = 1
 
 Set.prototype.equal = function (setB) {
     if (this.size !== setB.length) return false
@@ -116,7 +117,7 @@ $(document).ready(() => {
 
 $.ajax({
     // url: "charaCard.json?" + (new Date()).getTime(),
-    url: "./charaCard.json",
+    url: "/data/charaCard.json",
     dataType: "json"
 }).done((data) => {
     CHARA_DATA = []
@@ -128,7 +129,7 @@ $.ajax({
         "DARK": [],
         "VOID": [],
     }
-    // ROUTE_INFO_ALL = {}
+    ROUTE_INFO_ALL = {}
     for (var i in data) {
         var item = data[i]
         if (!item.enhancementCellList || !item.enhancementCellList.length) continue
@@ -138,12 +139,12 @@ $.ajax({
         var gBakHp = Math.floor(grow[0] * card.hp)
         var gBakAtk = Math.floor(grow[1] * card.attack)
         var gBakDef = Math.floor(grow[2] * card.defense)
-        var gRouteInfos
+        var gRouteInfos = null
         var gAttribute = _attrId[item.attributeId]
-        var gLv2SozaiNm
-        var gAccele
-        var gCharge
-        var gBlast
+        var gLv2SozaiNm = null
+        var gAccele = null
+        var gCharge = null
+        var gBlast = null
         var gKeno = []
         var gHitan = []
         var gGekido = []
@@ -227,8 +228,7 @@ $.ajax({
         var routes = new Set()
         endNode.forEach((v) => {
             var route = []
-            var k = node[v]
-            k = node.get(v)
+            var k = node.get(v)
             while (k) {
                 route.push(k[0])
                 k = node.get(k[1])
@@ -242,9 +242,21 @@ $.ajax({
                 break
             }
         }
-        // if (!gRouteInfos) {
-        //    没有现成就加一条
-        //}
+        if (!gRouteInfos) {
+            var newRoute = []
+            routes.forEach((v) => {
+                newRoute.push(JSON.parse(v))
+            })
+            newRoute.sort((a, b) => {
+                var len = a.length < b.length ? a.length : b.length
+                var i = 0
+                while (i < len && a[i] == b[i]) ++i
+                if (i >= len) return a.length - b.length
+                return a[i] - b[i]
+            })
+            gRouteInfos = _routeCount
+            ROUTE_INFO_ALL["ROUTE" + _routeCount++] = newRoute
+        }
         gNodeInfo[0] = [
             0,
             name,
