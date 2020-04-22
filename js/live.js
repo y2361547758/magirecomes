@@ -99,18 +99,11 @@ Set.prototype.equal = function (setB) {
     }
     return true
 }
-
-function getAbilityKey(name) {
-    for (var k in ABILITY_LIST) {
-        if (name == ABILITY_LIST[k]) return k
-    }
-    // 没有现成就加一条
-}
-function getMaterialKey(name) {
-    for (var k in MATERIALS) {
-        if (name == MATERIALS[k]) return k
-    }
-    // 没有现成就加一条
+Array.prototype.getKey = function (v) {
+    var i = this.indexOf(v)
+    if (~i) return i
+    this.push(v)
+    return this.length - 1
 }
 
 $(document).ready(() => {
@@ -130,6 +123,8 @@ $.ajax({
         "VOID": [],
     }
     ROUTE_INFO_ALL = {}
+    ABILITY_LIST = []
+    MATERIALS = []
     for (var i in data) {
         var item = data[i]
         if (!item.enhancementCellList || !item.enhancementCellList.length) continue
@@ -185,21 +180,21 @@ $.ajax({
                 break
             }
             if (level === 5 && ~["HP", "ATTACK", "DEFENSE"].indexOf(v.enhancementType)) switch (v.openGift1.name.substr(0,2)) {
-                case "嫌悪": gKeno    = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "嫌悪": gKeno    = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "悲嘆": gHitan   = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "悲嘆": gHitan   = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "激怒": gGekido  = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "激怒": gGekido  = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "恐怖": gKyofu   = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "恐怖": gKyofu   = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "驚嘆": gKyotan  = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "驚嘆": gKyotan  = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "期待": gKitai   = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "期待": gKitai   = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "恍惚": gKokotsu = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "恍惚": gKokotsu = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
-                case "敬愛": gKeiai   = [ getMaterialKey(v.openGift4.name), getMaterialKey(v.openGift3.name) ]
+                case "敬愛": gKeiai   = [ MATERIALS.getKey(v.openGift4.name), MATERIALS.getKey(v.openGift3.name) ]
                 break
             }
             if (v.enhancementType === "SKILL") {
@@ -215,7 +210,7 @@ $.ajax({
                         gNodeInfo[k] = [
                             level,
                             4,
-                            getAbilityKey(v.emotionSkill.shortDescription)
+                            ABILITY_LIST.getKey(v.emotionSkill.shortDescription)
                         ]
                     break
                 }
