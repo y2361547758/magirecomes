@@ -162,7 +162,7 @@ $.ajax({
         item.enhancementCellList.forEach((v, k) => {
             v.c = k
             node.set(v.charaEnhancementCellId, [k, v.needOpenedCellId])
-            if (!v.connectedCellIds) endNode.push(v.charaEnhancementCellId)
+            if (!v.connectedCellIds || v.connectedCellIds == '0') endNode.push(v.charaEnhancementCellId)
             var level = _level[v.needCC]
             switch (v.enhancementType) {
                 case "DISK_ACCELE":
